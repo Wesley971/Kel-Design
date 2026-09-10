@@ -1073,6 +1073,9 @@ img { display: block; max-width: 100%; height: auto; }
   margin-bottom: 36px;
 }
 
+.signature-phone a { transition: color 0.5s var(--ease-soft); }
+.signature-phone a:hover { color: var(--terra); }
+
 .signature-links {
   display: flex;
   gap: 28px;
