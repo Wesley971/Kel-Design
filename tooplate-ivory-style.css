@@ -1122,10 +1122,12 @@ img { display: block; max-width: 100%; height: auto; }
   z-index: 2000;
   width: 44px;
   height: 44px;
-  background: rgba(252, 250, 248, 0.7);
+  background: rgba(252, 250, 248, 0.92);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(26, 23, 20, 0.06);
   border-radius: 50%;
+  box-shadow: 0 2px 12px rgba(26, 23, 20, 0.08);
   cursor: pointer;
   flex-direction: column;
   align-items: center;
