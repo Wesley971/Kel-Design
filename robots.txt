@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://illustrious-paletas-69b570.netlify.app/sitemap.xml
