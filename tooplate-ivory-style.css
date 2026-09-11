@@ -158,16 +158,15 @@ img { display: block; max-width: 100%; height: auto; }
   content: '';
   position: absolute;
   bottom: 0;
-  left: 50%;
+  left: 0;
   width: 0;
   height: 1.5px;
   background: var(--terra);
-  transition: width 0.7s var(--ease-soft), left 0.7s var(--ease-soft);
+  transition: width 0.7s var(--ease-soft);
 }
 
 .cta-link:hover::after {
   width: 100%;
-  left: 0;
 }
 
 .cta-link--dark { color: var(--ink); }
@@ -183,7 +182,7 @@ img { display: block; max-width: 100%; height: auto; }
 
 .cta-link--disabled:hover::after {
   width: 0;
-  left: 50%;
+  left: 0;
 }
 
 /* ═══════════════════════════════════════════════
