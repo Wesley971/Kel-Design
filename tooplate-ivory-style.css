@@ -123,8 +123,7 @@ img { display: block; max-width: 100%; height: auto; }
   font-family: 'EB Garamond', serif;
   font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  font-style: italic;
   color: var(--amber);
   transition: color 0.4s;
   z-index: 900;
@@ -144,8 +143,6 @@ img { display: block; max-width: 100%; height: auto; }
   font-family: 'Work Sans', sans-serif;
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--terra);
   position: relative;
   padding-bottom: 4px;
@@ -409,8 +406,7 @@ img { display: block; max-width: 100%; height: auto; }
   left: 10px;
   font-family: 'EB Garamond', serif;
   font-size: 13px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-style: italic;
   color: var(--ink-faint);
 }
 
@@ -451,8 +447,7 @@ img { display: block; max-width: 100%; height: auto; }
   font-family: 'EB Garamond', serif;
   font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  font-style: italic;
   color: var(--ink-muted);
   border: 2px dashed var(--ink-faint);
   padding: 8px 18px;
@@ -799,8 +794,7 @@ img { display: block; max-width: 100%; height: auto; }
 .timeline-step {
   font-family: 'EB Garamond', serif;
   font-size: 13px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  font-style: italic;
   color: var(--terra);
   margin-bottom: 10px;
 }
