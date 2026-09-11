@@ -894,6 +894,21 @@ img { display: block; max-width: 100%; height: auto; }
   color: var(--ink-muted);
 }
 
+/* Desktop only: break the 4-equal-column symmetry with uneven widths and a
+   per-step vertical offset. Scoped above the 1024px reset (repeat(2,1fr))
+   so it never fights the existing responsive breakpoints. */
+@media (min-width: 1025px) {
+  .order-grid {
+    grid-template-columns: 1.15fr 0.9fr 1.2fr 0.85fr;
+    align-items: start;
+  }
+
+  .order-step:nth-child(1) { margin-top: 0; }
+  .order-step:nth-child(2) { margin-top: 28px; }
+  .order-step:nth-child(3) { margin-top: 10px; }
+  .order-step:nth-child(4) { margin-top: 40px; }
+}
+
 /* ═══════════════════════════════════════════════
    SECTION 6: VIDEO FRAGMENT (Grain Overlay)
    ═══════════════════════════════════════════════ */
