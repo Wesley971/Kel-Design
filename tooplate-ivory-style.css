@@ -778,16 +778,6 @@ img { display: block; max-width: 100%; height: auto; }
   padding-left: 40px;
 }
 
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, var(--terra), var(--terra), transparent);
-}
-
 .timeline-item {
   position: relative;
   padding: 0 0 56px 0;
@@ -804,18 +794,44 @@ img { display: block; max-width: 100%; height: auto; }
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: -44px;
-  top: 6px;
-  width: 9px;
-  height: 9px;
+  left: -43.5px;
+  top: 7px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   border: 1.5px solid var(--terra);
   background: var(--ink);
   transition: background 0.5s var(--ease-soft);
 }
 
+.timeline-item:nth-child(2)::before { left: -44.5px; top: 6px; width: 9px; height: 9px; }
+.timeline-item:nth-child(3)::before { left: -45.5px; top: 5px; width: 11px; height: 11px; }
+.timeline-item:nth-child(4)::before { left: -46.5px; top: 4px; width: 13px; height: 13px; }
+
 .timeline-item.in-view::before {
   background: var(--terra);
+}
+
+.timeline-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 10.5px;
+  height: 100%;
+  left: -41px;
+  width: 2px;
+  background: var(--terra);
+}
+
+.timeline-item:nth-child(1)::after {
+  left: -40.5px;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--terra));
+}
+
+.timeline-item:nth-child(3)::after {
+  left: -41.5px;
+  width: 3px;
+  background: linear-gradient(180deg, var(--terra), transparent);
 }
 
 .timeline-step {
@@ -1304,8 +1320,13 @@ img { display: block; max-width: 100%; height: auto; }
 
   .process { padding: 60px 24px; }
   .timeline { padding-left: 28px; }
-  .timeline::before { left: 0; }
-  .timeline-item::before { left: -32px; }
+  .timeline-item::before { left: -31.5px; }
+  .timeline-item:nth-child(2)::before { left: -32.5px; }
+  .timeline-item:nth-child(3)::before { left: -33.5px; }
+  .timeline-item:nth-child(4)::before { left: -34.5px; }
+  .timeline-item:not(:last-child)::after { left: -29px; }
+  .timeline-item:nth-child(1)::after { left: -28.5px; }
+  .timeline-item:nth-child(3)::after { left: -29.5px; }
 
   .order { padding: 60px 24px; }
   .order-header { margin-bottom: 40px; }
