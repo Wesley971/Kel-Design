@@ -19,6 +19,7 @@ https://www.tooplate.com/view/2166-ivory-flow
   --terra: #D96C4A;
   --terra-light: rgba(217, 108, 74, 0.12);
   --terra-ghost: rgba(217, 108, 74, 0.06);
+  --amber: #B5731F;
   --ink: #1A1714;
   --ink-soft: #3D3832;
   --ink-muted: #8A8279;
@@ -103,10 +104,15 @@ img { display: block; max-width: 100%; height: auto; }
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--ink-faint);
+  color: var(--amber);
+  transition: color 0.4s;
   z-index: 900;
   pointer-events: none;
   white-space: nowrap;
+}
+
+.est-label--on-dark {
+  color: var(--ink-faint);
 }
 
 /* ═══════════════════════════════════════════════
@@ -233,7 +239,8 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .hero-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
   font-size: clamp(42px, 5.5vw, 88px);
   font-weight: 300;
   line-height: 1.05;
@@ -323,7 +330,8 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .lookbook-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
   font-size: clamp(28px, 3.5vw, 48px);
   font-weight: 300;
   color: var(--ink);
@@ -394,7 +402,7 @@ img { display: block; max-width: 100%; height: auto; }
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.06em;
-  color: var(--terra);
+  color: var(--amber);
 }
 
 .lookbook-card-visual {
@@ -551,7 +559,8 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .product-name {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
   font-size: clamp(32px, 4vw, 56px);
   font-weight: 300;
   line-height: 1.1;
@@ -560,10 +569,11 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .product-price {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
   font-size: 24px;
   font-weight: 500;
-  color: var(--terra);
+  color: var(--amber);
   margin-bottom: 24px;
 }
 
@@ -707,7 +717,8 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .process-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
   font-size: clamp(28px, 3.5vw, 48px);
   font-weight: 300;
   line-height: 1.15;
@@ -777,7 +788,8 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .timeline-heading {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
   font-size: 22px;
   font-weight: 400;
   margin-bottom: 8px;
@@ -816,7 +828,8 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .order-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
   font-size: clamp(28px, 3.5vw, 48px);
   font-weight: 300;
   color: var(--ink);
@@ -843,7 +856,8 @@ img { display: block; max-width: 100%; height: auto; }
 
 .order-step-num {
   display: block;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
   font-size: 40px;
   font-weight: 300;
   font-style: italic;
@@ -852,7 +866,8 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .order-step-heading {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
   font-size: 19px;
   font-weight: 500;
   color: var(--ink);
@@ -939,7 +954,8 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .video-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
   font-size: clamp(28px, 4vw, 52px);
   font-weight: 300;
   color: var(--oat);
@@ -973,7 +989,8 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .reviews-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
   font-size: clamp(24px, 3vw, 36px);
   font-weight: 300;
   color: var(--ink);
@@ -981,7 +998,8 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .reviews-text {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
   font-style: italic;
   font-size: 17px;
   font-weight: 400;
@@ -1008,7 +1026,8 @@ img { display: block; max-width: 100%; height: auto; }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
   font-size: clamp(120px, 18vw, 280px);
   font-weight: 300;
   color: rgba(26, 23, 20, 0.035);
@@ -1027,7 +1046,8 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .signature-mark {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.4em;
@@ -1037,7 +1057,8 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .signature-heading {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
   font-size: clamp(32px, 4vw, 56px);
   font-weight: 300;
   line-height: 1.15;
@@ -1054,7 +1075,8 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .signature-email {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
   font-size: clamp(18px, 2vw, 26px);
   font-weight: 400;
   font-style: italic;
@@ -1168,7 +1190,8 @@ img { display: block; max-width: 100%; height: auto; }
 .mobile-nav.open { display: flex; }
 
 .mobile-nav a {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
   font-size: 28px;
   font-weight: 300;
   color: var(--ink);

@@ -76,6 +76,20 @@ https://www.tooplate.com/view/2166-ivory-flow
     });
   }
 
+  /* ── Est. label: swap to muted color over the dark process section ── */
+  var estLabel = document.querySelector('.est-label');
+  var processSection = document.getElementById('process');
+
+  if (estLabel && processSection && 'IntersectionObserver' in window) {
+    var estLabelObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        estLabel.classList.toggle('est-label--on-dark', entry.isIntersecting);
+      });
+    }, { threshold: 0.2 });
+
+    estLabelObs.observe(processSection);
+  }
+
   /* ── Mouse-following Buy Circle (LERP) ── */
   var buyCircle = document.getElementById('buyCircle');
   var productZone = document.getElementById('productImageZone');
