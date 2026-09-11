@@ -618,6 +618,10 @@ img { display: block; max-width: 100%; height: auto; }
   color: var(--white);
 }
 
+@media (hover: none), (pointer: coarse) {
+  .buy-circle { display: none; }
+}
+
 .product-info {
   padding: 80px 64px;
   display: flex;

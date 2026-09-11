@@ -75,8 +75,16 @@ https://www.tooplate.com/view/2166-ivory-flow
   var mouseX = 0, mouseY = 0, circleX = 0, circleY = 0;
   var isOverProduct = false;
   var rafId = null;
+  var hasHoverPointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-  if (productZone && buyCircle && window.innerWidth > 768) {
+  if (productZone) {
+    productZone.addEventListener('click', function() {
+      var target = document.querySelector('#signature');
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  if (productZone && buyCircle && hasHoverPointer) {
     productZone.addEventListener('mouseenter', function() {
       isOverProduct = true;
       buyCircle.classList.add('visible');
@@ -91,11 +99,8 @@ https://www.tooplate.com/view/2166-ivory-flow
     productZone.addEventListener('mousemove', function(e) {
       mouseX = e.clientX;
       mouseY = e.clientY;
-    });
-
-    productZone.addEventListener('click', function() {
-      var target = document.querySelector('#signature');
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      var overThumbs = !!e.target.closest('.product-thumbs');
+      buyCircle.classList.toggle('visible', !overThumbs);
     });
 
     function lerpLoop() {
