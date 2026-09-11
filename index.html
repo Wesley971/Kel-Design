@@ -65,6 +65,12 @@
 <!-- ═══════ MOUSE-FOLLOWING BUY CIRCLE ═══════ -->
 <div class="buy-circle" id="buyCircle"><span>Commander</span></div>
 
+<!-- ═══════ LOOKBOOK LIGHTBOX ═══════ -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" aria-label="Fermer">&times;</button>
+  <img class="lightbox-img" alt="">
+</div>
+
 <!-- ═══════ THE CANVAS ═══════ -->
 <main>
 
@@ -221,6 +227,7 @@
       </div>
     </div>
     <div class="lookbook-footer">
+      <p class="lookbook-note">Pièce faite main, de légères variations de couleur sont possibles.</p>
       <div class="lookbook-arrows">
         <button class="lookbook-arrow" id="lbPrev" aria-label="Précédent">
           <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
@@ -235,7 +242,8 @@
   <!-- SECTION 3: PRODUCT DETAIL -->
   <section class="canvas-section product" id="product">
     <div class="product-image-zone" id="productImageZone">
-      <img src="images/noeud-automne-1.jpg" alt="Nœud papillon Automne, pièce signature KEL Design" loading="lazy">
+      <img class="product-main-img" src="images/noeud-automne-1.jpg" alt="Nœud papillon Automne, pièce signature KEL Design" loading="lazy">
+      <div class="product-thumbs" id="productThumbs"></div>
     </div>
     <div class="product-info">
       <div class="product-info-content">

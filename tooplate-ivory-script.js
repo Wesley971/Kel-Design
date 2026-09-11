@@ -9,6 +9,8 @@ https://www.tooplate.com/view/2166-ivory-flow
 (function() {
   'use strict';
 
+  var openLightbox;
+
   /* ── Timeline items — fade in at center viewport ── */
   var timelineItems = document.querySelectorAll('[data-timeline]');
 
@@ -113,8 +115,11 @@ https://www.tooplate.com/view/2166-ivory-flow
   /* ── Product: 3-piece carousel ── */
   var productSlides = [
     {
-      img: 'images/noeud-automne-1.jpg',
-      alt: 'Nœud papillon Automne, pièce signature KEL Design',
+      images: ['images/noeud-automne-1.jpg', 'images/noeud-automne-2.jpg'],
+      alts: [
+        'Nœud papillon Automne, pièce signature KEL Design',
+        'Nœud papillon Automne, vue rapprochée sur les éclats dorés et fleurs séchées'
+      ],
       badge: 'Pièce Signature',
       name: 'Le Nœud Papillon<br>Automne',
       price: 'Sur devis',
@@ -122,8 +127,8 @@ https://www.tooplate.com/view/2166-ivory-flow
       specs: ['Résine &amp; fleurs séchées', 'Suédine', 'Pièce sur commande', 'Fabrication française']
     },
     {
-      img: 'images/boucles-herbier-jaune-velours.jpg',
-      alt: "Boucles d'oreilles herbier jaune sur fond bleu nuit",
+      images: ['images/boucles-herbier-jaune-velours.jpg'],
+      alts: ["Boucles d'oreilles herbier jaune sur fond bleu nuit"],
       badge: 'Pièce Signature',
       name: "Boucles d'Oreilles<br>Herbier Jaune Velours",
       price: '16€', // prix provisoire, à confirmer
@@ -131,8 +136,8 @@ https://www.tooplate.com/view/2166-ivory-flow
       specs: ['Résine &amp; fleurs séchées', 'Crochets dorés', 'Pièce sur commande', 'Fabrication française']
     },
     {
-      img: 'images/boucles-transparente-cuivre-bordeaux.jpg',
-      alt: "Boucles d'oreilles transparentes à éclats cuivrés et perle bordeaux",
+      images: ['images/boucles-transparente-cuivre-bordeaux.jpg'],
+      alts: ["Boucles d'oreilles transparentes à éclats cuivrés et perle bordeaux"],
       badge: 'Pièce Signature',
       name: "Boucles d'Oreilles<br>Transparente Cuivre &amp; Bordeaux",
       price: '17€', // prix provisoire, à confirmer
@@ -150,17 +155,42 @@ https://www.tooplate.com/view/2166-ivory-flow
     var currentSlide = 0;
     var isTransitioning = false;
     var infoContent = productSection.querySelector('.product-info-content');
-    var slideImg = productSection.querySelector('.product-image-zone img');
+    var slideImg = productSection.querySelector('.product-main-img');
+    var thumbsEl = document.getElementById('productThumbs');
     var badgeEl = productSection.querySelector('.product-badge');
     var nameEl = productSection.querySelector('.product-name');
     var priceEl = productSection.querySelector('.product-price');
     var descEl = productSection.querySelector('.product-desc');
     var specDds = productSection.querySelectorAll('.product-spec dd');
 
+    function renderThumbs(data) {
+      thumbsEl.innerHTML = '';
+      if (data.images.length <= 1) {
+        thumbsEl.classList.remove('is-visible');
+        return;
+      }
+      thumbsEl.classList.add('is-visible');
+      data.images.forEach(function(src, i) {
+        var thumb = document.createElement('button');
+        thumb.className = 'product-thumb' + (i === 0 ? ' is-active' : '');
+        thumb.style.backgroundImage = 'url(' + src + ')';
+        thumb.setAttribute('aria-label', 'Voir cette photo');
+        thumb.addEventListener('click', function(e) {
+          e.stopPropagation();
+          slideImg.src = src;
+          slideImg.alt = data.alts[i];
+          thumbsEl.querySelectorAll('.product-thumb').forEach(function(t) { t.classList.remove('is-active'); });
+          thumb.classList.add('is-active');
+        });
+        thumbsEl.appendChild(thumb);
+      });
+    }
+
     function renderSlide(index) {
       var data = productSlides[index];
-      slideImg.src = data.img;
-      slideImg.alt = data.alt;
+      slideImg.src = data.images[0];
+      slideImg.alt = data.alts[0];
+      renderThumbs(data);
       badgeEl.textContent = data.badge;
       nameEl.innerHTML = data.name;
       priceEl.textContent = data.price;
@@ -206,6 +236,8 @@ https://www.tooplate.com/view/2166-ivory-flow
         goToSlide(parseInt(dot.getAttribute('data-slide'), 10));
       });
     });
+
+    renderThumbs(productSlides[currentSlide]);
   }
 
   /* ── Lookbook: Momentum drag + Arrow buttons ── */
@@ -218,6 +250,7 @@ https://www.tooplate.com/view/2166-ivory-flow
     var lastX = 0;
     var lastTime = 0;
     var momentumId = null;
+    var dragDistance = 0;
 
     track.addEventListener('mousedown', function(e) {
       cancelMomentum();
@@ -227,6 +260,7 @@ https://www.tooplate.com/view/2166-ivory-flow
       scrollStart = track.scrollLeft;
       lastTime = Date.now();
       velX = 0;
+      dragDistance = 0;
       track.classList.add('is-dragging');
     });
 
@@ -239,6 +273,7 @@ https://www.tooplate.com/view/2166-ivory-flow
       if (dt > 0) velX = dx / dt;
       lastX = e.clientX;
       lastTime = now;
+      dragDistance = Math.abs(e.clientX - startX);
       track.scrollLeft = scrollStart - (e.clientX - startX);
     });
 
@@ -305,6 +340,45 @@ https://www.tooplate.com/view/2166-ivory-flow
 
     if (nextBtn) nextBtn.addEventListener('click', function() {
       smoothScroll(track.scrollLeft + getScrollStep());
+    });
+
+    /* Click/tap to zoom (skipped when the click ends a drag) */
+    cards.forEach(function(card) {
+      var img = card.querySelector('img');
+      if (!img) return;
+      img.addEventListener('click', function() {
+        if (dragDistance > 5 || !openLightbox) return;
+        openLightbox(img.src, img.alt);
+      });
+    });
+  }
+
+  /* ── Lookbook: Lightbox zoom ── */
+  var lightbox = document.getElementById('lightbox');
+  if (lightbox) {
+    var lightboxImg = lightbox.querySelector('.lightbox-img');
+    var lightboxClose = lightbox.querySelector('.lightbox-close');
+
+    openLightbox = function(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt;
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+    };
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
     });
   }
 
