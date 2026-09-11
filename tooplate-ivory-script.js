@@ -145,21 +145,21 @@ https://www.tooplate.com/view/2166-ivory-flow
       specs: ['Résine &amp; fleurs séchées', 'Suédine', 'Pièce sur commande', 'Fabrication française']
     },
     {
-      img: 'images/boucles-or-corail.jpg',
-      alt: "Boucles d'oreilles or et corail",
+      img: 'images/boucles-herbier-jaune-velours.jpg',
+      alt: "Boucles d'oreilles herbier jaune sur fond bleu nuit",
       badge: 'Pièce Signature',
-      name: "Boucles d'Oreilles<br>Or Corail",
-      price: '24€',
-      desc: "Une composition dorée et corail, fleurs séchées prises dans la résine. Façonnées à la main dans mon atelier.",
+      name: "Boucles d'Oreilles<br>Herbier Jaune Velours",
+      price: '16€', // prix provisoire, à confirmer
+      desc: "Un assemblage de fleurs séchées jaunes prises dans la résine, à la forme organique et aux éclats dorés. Façonnées à la main dans mon atelier.",
       specs: ['Résine &amp; fleurs séchées', 'Crochets dorés', 'Pièce sur commande', 'Fabrication française']
     },
     {
-      img: 'images/boucles-violette-fleurs.jpg',
-      alt: "Boucles d'oreilles violettes avec breloque fleurie",
+      img: 'images/boucles-transparente-cuivre-bordeaux.jpg',
+      alt: "Boucles d'oreilles transparentes à éclats cuivrés et perle bordeaux",
       badge: 'Pièce Signature',
-      name: "Boucles d'Oreilles<br>Violette Fleurie",
-      price: '24€',
-      desc: "Une breloque fleurie sur un camaïeu violet, fleurs séchées et résine façonnées à la main dans mon atelier.",
+      name: "Boucles d'Oreilles<br>Transparente Cuivre &amp; Bordeaux",
+      price: '17€', // prix provisoire, à confirmer
+      desc: "Une composition transparente à éclats cuivrés, prolongée d'une perle bordeaux. Résine façonnée à la main dans mon atelier.",
       specs: ['Résine &amp; fleurs séchées', 'Crochets dorés', 'Pièce sur commande', 'Fabrication française']
     }
   ];
