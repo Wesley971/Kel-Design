@@ -9,29 +9,6 @@ https://www.tooplate.com/view/2166-ivory-flow
 (function() {
   'use strict';
 
-  /* ── IntersectionObserver — Scroll Reveal ── */
-  var revealEls = document.querySelectorAll('.reveal');
-
-  if ('IntersectionObserver' in window) {
-    var revealObs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-
-    revealEls.forEach(function(el) { revealObs.observe(el); });
-
-    /* 3-second safety fallback for iframe previews */
-    setTimeout(function() {
-      revealEls.forEach(function(el) { el.classList.add('visible'); });
-    }, 3000);
-  } else {
-    revealEls.forEach(function(el) { el.classList.add('visible'); });
-  }
-
   /* ── Timeline items — fade in at center viewport ── */
   var timelineItems = document.querySelectorAll('[data-timeline]');
 

@@ -1135,20 +1135,6 @@ img { display: block; max-width: 100%; height: auto; }
 .signature-footer a:hover { color: var(--terra); }
 
 /* ═══════════════════════════════════════════════
-   SCROLL REVEAL
-   ═══════════════════════════════════════════════ */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.9s var(--ease-soft), transform 0.9s var(--ease-soft);
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ═══════════════════════════════════════════════
    HAMBURGER (MOBILE)
    ═══════════════════════════════════════════════ */
 .hamburger {
@@ -1220,7 +1206,6 @@ img { display: block; max-width: 100%; height: auto; }
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
-  .reveal { opacity: 1; transform: none; }
   .timeline-item { opacity: 1; transform: none; }
 }
 
