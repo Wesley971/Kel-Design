@@ -455,10 +455,8 @@ img { display: block; max-width: 100%; height: auto; }
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--ink-muted);
-  border: 1px solid var(--ink-faint);
-  border-radius: 999px;
+  border: 2px dashed var(--ink-faint);
   padding: 8px 18px;
-  background: rgba(252, 250, 248, 0.55);
 }
 
 .lookbook-footer {
