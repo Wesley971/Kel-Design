@@ -11,6 +11,10 @@ https://www.tooplate.com/view/2166-ivory-flow
 
   var openLightbox;
 
+  function buildWhatsAppLink(pieceName) {
+    return 'https://wa.me/33768728002?text=' + encodeURIComponent('Bonjour, je suis intéressée par : ' + pieceName);
+  }
+
   /* ── Timeline items — fade in at center viewport ── */
   var timelineItems = document.querySelectorAll('[data-timeline]');
 
@@ -79,8 +83,7 @@ https://www.tooplate.com/view/2166-ivory-flow
 
   if (productZone) {
     productZone.addEventListener('click', function() {
-      var target = document.querySelector('#signature');
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.open(buildWhatsAppLink(productSlides[currentSlide].plainName), '_blank', 'noopener');
     });
   }
 
@@ -127,6 +130,7 @@ https://www.tooplate.com/view/2166-ivory-flow
       ],
       badge: 'Pièce Signature',
       name: 'Le Nœud Papillon<br>Automne',
+      plainName: 'Le Nœud Papillon Automne',
       price: 'Sur devis',
       desc: "Composé de fleurs séchées prises dans la résine et rehaussé d'éclats dorés. Fixation en suédine, façonné à la main dans mon atelier.",
       specs: ['Résine &amp; fleurs séchées', 'Suédine', 'Pièce sur commande', 'Fabrication française']
@@ -136,6 +140,7 @@ https://www.tooplate.com/view/2166-ivory-flow
       alts: ["Boucles d'oreilles herbier jaune sur fond bleu nuit"],
       badge: 'Pièce Signature',
       name: "Boucles d'Oreilles<br>Herbier Jaune Velours",
+      plainName: "Boucles d'Oreilles Herbier Jaune Velours",
       price: '16€', // prix provisoire, à confirmer
       desc: "Un assemblage de fleurs séchées jaunes prises dans la résine, à la forme organique et aux éclats dorés. Façonnées à la main dans mon atelier.",
       specs: ['Résine &amp; fleurs séchées', 'Crochets dorés', 'Pièce sur commande', 'Fabrication française']
@@ -145,6 +150,7 @@ https://www.tooplate.com/view/2166-ivory-flow
       alts: ["Boucles d'oreilles transparentes à éclats cuivrés et perle bordeaux"],
       badge: 'Pièce Signature',
       name: "Boucles d'Oreilles<br>Transparente Cuivre &amp; Bordeaux",
+      plainName: "Boucles d'Oreilles Transparente Cuivre & Bordeaux",
       price: '17€', // prix provisoire, à confirmer
       desc: "Une composition transparente à éclats cuivrés, prolongée d'une perle bordeaux. Résine façonnée à la main dans mon atelier.",
       specs: ['Résine &amp; fleurs séchées', 'Crochets dorés', 'Pièce sur commande', 'Fabrication française']
@@ -167,6 +173,7 @@ https://www.tooplate.com/view/2166-ivory-flow
     var priceEl = productSection.querySelector('.product-price');
     var descEl = productSection.querySelector('.product-desc');
     var specDds = productSection.querySelectorAll('.product-spec dd');
+    var productCta = productSection.querySelector('#productCta');
 
     function renderThumbs(data) {
       thumbsEl.innerHTML = '';
@@ -201,6 +208,7 @@ https://www.tooplate.com/view/2166-ivory-flow
       priceEl.textContent = data.price;
       descEl.textContent = data.desc;
       specDds.forEach(function(dd, i) { dd.innerHTML = data.specs[i]; });
+      productCta.href = buildWhatsAppLink(data.plainName);
       productDots.forEach(function(dot, i) {
         var active = i === index;
         dot.classList.toggle('is-active', active);
@@ -243,6 +251,7 @@ https://www.tooplate.com/view/2166-ivory-flow
     });
 
     renderThumbs(productSlides[currentSlide]);
+    productCta.href = buildWhatsAppLink(productSlides[currentSlide].plainName);
   }
 
   /* ── Lookbook: Momentum drag + Arrow buttons ── */
@@ -350,11 +359,20 @@ https://www.tooplate.com/view/2166-ivory-flow
     /* Click/tap to zoom (skipped when the click ends a drag) */
     cards.forEach(function(card) {
       var img = card.querySelector('img');
-      if (!img) return;
-      img.addEventListener('click', function() {
-        if (dragDistance > 5 || !openLightbox) return;
-        openLightbox(img.src, img.alt);
-      });
+      if (img) {
+        img.addEventListener('click', function() {
+          if (dragDistance > 5 || !openLightbox) return;
+          openLightbox(img.src, img.alt);
+        });
+      }
+
+      var cta = card.querySelector('.lookbook-card-cta');
+      if (cta) {
+        cta.href = buildWhatsAppLink(card.getAttribute('data-piece-name'));
+        cta.addEventListener('click', function(e) {
+          if (dragDistance > 5) e.preventDefault();
+        });
+      }
     });
   }
 

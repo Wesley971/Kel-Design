@@ -425,6 +425,12 @@ img { display: block; max-width: 100%; height: auto; }
   color: var(--amber);
 }
 
+.lookbook-card-cta {
+  position: absolute;
+  bottom: -54px;
+  right: 10px;
+}
+
 .lookbook-card-visual {
   height: 55vh;
   min-height: 350px;
@@ -978,6 +984,11 @@ img { display: block; max-width: 100%; height: auto; }
   color: var(--ink-muted);
 }
 
+.order-cta {
+  margin-top: 56px;
+  text-align: center;
+}
+
 /* Desktop only: break the 4-equal-column symmetry with uneven widths and a
    per-step vertical offset. Scoped above the 1024px reset (repeat(2,1fr))
    so it never fights the existing responsive breakpoints. */
@@ -1402,10 +1413,11 @@ img { display: block; max-width: 100%; height: auto; }
 
   .lookbook { padding: 48px 0; }
   .lookbook-header { padding: 0 24px; margin-bottom: 28px; }
-  .lookbook-track { padding: 0 24px 60px; gap: 16px; }
+  .lookbook-track { padding: 0 24px 100px; gap: 16px; }
   .lookbook-card img { height: 45vh; min-height: 260px; border-radius: 24px; border-width: 6px; }
   .lookbook-card-visual { height: 45vh; min-height: 260px; border-radius: 24px; border-width: 6px; }
   .lookbook-card-price { bottom: -52px; }
+  .lookbook-card-cta { bottom: -80px; right: auto; left: 10px; }
   .lookbook-footer { padding: 0 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
 
   .product-image-zone { height: 50vh; cursor: auto; }
