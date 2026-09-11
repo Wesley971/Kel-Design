@@ -72,22 +72,43 @@ img { display: block; max-width: 100%; height: auto; }
   font-family: 'EB Garamond', serif;
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--ink-soft);
   padding: 8px 18px;
   border-radius: 999px;
   transition: color 0.5s var(--ease-soft), background 0.5s var(--ease-soft);
   white-space: nowrap;
+  display: grid;
 }
 
-.pill-nav a:hover {
-  color: var(--ink);
+.pill-nav a span,
+.pill-nav a::before,
+.pill-nav a::after {
+  grid-area: 1 / 1;
 }
 
-.pill-nav a.active {
-  background: var(--ink);
-  color: var(--oat);
+.pill-nav a::before,
+.pill-nav a::after {
+  content: attr(data-text);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.pill-nav a::before {
+  font-style: normal;
+}
+
+.pill-nav a::after {
+  font-style: italic;
+}
+
+.pill-nav a span {
+  transition: color 0.5s var(--ease-soft);
+}
+
+.pill-nav a:hover span,
+.pill-nav a.active span {
+  color: var(--terra);
+  font-style: italic;
 }
 
 /* ═══════════════════════════════════════════════
