@@ -373,7 +373,8 @@ https://www.tooplate.com/view/2166-ivory-flow
     cards.forEach(function(card) {
       var img = card.querySelector('img');
       if (img) {
-        img.addEventListener('click', function() {
+        card.addEventListener('click', function(e) {
+          if (e.target !== card && e.target !== img) return;
           if (dragDistance > 5 || !openLightbox) return;
           openLightbox(img.src, img.alt);
         });
