@@ -9,6 +9,43 @@ https://www.tooplate.com/view/2166-ivory-flow
 (function() {
   'use strict';
 
+  /* ── Product data: single source of truth for the signature carousel ── */
+  var productSlides = [
+    {
+      images: ['images/noeud-automne-1.jpg', 'images/noeud-automne-2.jpg'],
+      alts: [
+        'Nœud papillon Automne, pièce signature KEL Design',
+        'Nœud papillon Automne, vue rapprochée sur les éclats dorés et fleurs séchées'
+      ],
+      badge: 'Pièce Signature',
+      name: 'Le Nœud Papillon<br>Automne',
+      plainName: 'Le Nœud Papillon Automne',
+      price: 'Sur devis',
+      desc: "Composé de fleurs séchées prises dans la résine et rehaussé d'éclats dorés. Fixation en suédine, façonné à la main dans mon atelier.",
+      specs: 'Résine et fleurs séchées, fixation en suédine — pièce réalisée sur commande, fabriquée en France.'
+    },
+    {
+      images: ['images/boucles-herbier-jaune-velours.jpg'],
+      alts: ["Boucles d'oreilles herbier jaune sur fond bleu nuit"],
+      badge: 'Pièce Signature',
+      name: "Boucles d'Oreilles<br>Herbier Jaune Velours",
+      plainName: "Boucles d'Oreilles Herbier Jaune Velours",
+      price: '16€', // prix provisoire, à confirmer
+      desc: "Un assemblage de fleurs séchées jaunes prises dans la résine, à la forme organique et aux éclats dorés. Façonnées à la main dans mon atelier.",
+      specs: 'Résine et fleurs séchées, crochets dorés — confectionnée à la demande, conçue en France.'
+    },
+    {
+      images: ['images/boucles-transparente-cuivre-bordeaux.jpg'],
+      alts: ["Boucles d'oreilles transparentes à éclats cuivrés et perle bordeaux"],
+      badge: 'Pièce Signature',
+      name: "Boucles d'Oreilles<br>Transparente Cuivre &amp; Bordeaux",
+      plainName: "Boucles d'Oreilles Transparente Cuivre & Bordeaux",
+      price: '17€', // prix provisoire, à confirmer
+      desc: "Une composition transparente à éclats cuivrés, prolongée d'une perle bordeaux. Résine façonnée à la main dans mon atelier.",
+      specs: 'Résine et fleurs séchées, crochets dorés — créée sur commande, fabrication 100% française.'
+    }
+  ];
+
   var openLightbox;
 
   function buildWhatsAppLink(pieceName) {
@@ -121,42 +158,6 @@ https://www.tooplate.com/view/2166-ivory-flow
   }
 
   /* ── Product: 3-piece carousel ── */
-  var productSlides = [
-    {
-      images: ['images/noeud-automne-1.jpg', 'images/noeud-automne-2.jpg'],
-      alts: [
-        'Nœud papillon Automne, pièce signature KEL Design',
-        'Nœud papillon Automne, vue rapprochée sur les éclats dorés et fleurs séchées'
-      ],
-      badge: 'Pièce Signature',
-      name: 'Le Nœud Papillon<br>Automne',
-      plainName: 'Le Nœud Papillon Automne',
-      price: 'Sur devis',
-      desc: "Composé de fleurs séchées prises dans la résine et rehaussé d'éclats dorés. Fixation en suédine, façonné à la main dans mon atelier.",
-      specs: 'Résine et fleurs séchées, fixation en suédine — pièce réalisée sur commande, fabriquée en France.'
-    },
-    {
-      images: ['images/boucles-herbier-jaune-velours.jpg'],
-      alts: ["Boucles d'oreilles herbier jaune sur fond bleu nuit"],
-      badge: 'Pièce Signature',
-      name: "Boucles d'Oreilles<br>Herbier Jaune Velours",
-      plainName: "Boucles d'Oreilles Herbier Jaune Velours",
-      price: '16€', // prix provisoire, à confirmer
-      desc: "Un assemblage de fleurs séchées jaunes prises dans la résine, à la forme organique et aux éclats dorés. Façonnées à la main dans mon atelier.",
-      specs: 'Résine et fleurs séchées, crochets dorés — confectionnée à la demande, conçue en France.'
-    },
-    {
-      images: ['images/boucles-transparente-cuivre-bordeaux.jpg'],
-      alts: ["Boucles d'oreilles transparentes à éclats cuivrés et perle bordeaux"],
-      badge: 'Pièce Signature',
-      name: "Boucles d'Oreilles<br>Transparente Cuivre &amp; Bordeaux",
-      plainName: "Boucles d'Oreilles Transparente Cuivre & Bordeaux",
-      price: '17€', // prix provisoire, à confirmer
-      desc: "Une composition transparente à éclats cuivrés, prolongée d'une perle bordeaux. Résine façonnée à la main dans mon atelier.",
-      specs: 'Résine et fleurs séchées, crochets dorés — créée sur commande, fabrication 100% française.'
-    }
-  ];
-
   var productSection = document.querySelector('.product');
   var productPrevBtn = document.getElementById('productPrev');
   var productNextBtn = document.getElementById('productNext');
