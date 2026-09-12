@@ -203,6 +203,7 @@ img { display: block; max-width: 100%; height: auto; }
 .canvas-section:nth-child(6) { z-index: 6; }
 .canvas-section:nth-child(7) { z-index: 7; }
 .canvas-section:nth-child(8) { z-index: 8; }
+.canvas-section:nth-child(9) { z-index: 9; }
 
 /* ═══════════════════════════════════════════════
    SECTION 1: HERO (Split Screen)
@@ -1114,7 +1115,74 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 /* ═══════════════════════════════════════════════
-   SECTION 8: THE SIGNATURE
+   SECTION 8: FAQ
+   ═══════════════════════════════════════════════ */
+.faq {
+  background: var(--oat);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 64px;
+}
+
+.faq-inner {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-header {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 64px;
+}
+
+.faq-title {
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 300;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.faq-subtitle {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--ink-muted);
+  line-height: 1.8;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.faq-item {
+  padding-top: 28px;
+  border-top: 1px solid var(--oat-deep);
+}
+
+.faq-question {
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.faq-answer {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--ink-muted);
+}
+
+/* ═══════════════════════════════════════════════
+   SECTION 9: THE SIGNATURE
    ═══════════════════════════════════════════════ */
 .signature {
   background: var(--oat-mid);
@@ -1421,6 +1489,9 @@ img { display: block; max-width: 100%; height: auto; }
   .video-content { padding: 24px; }
 
   .reviews { padding: 48px 24px; }
+
+  .faq { padding: 60px 24px; }
+  .faq-grid { grid-template-columns: 1fr; gap: 36px; }
 
   .signature-content { padding: 24px; }
   .signature-bg-logo { font-size: 80px; }
