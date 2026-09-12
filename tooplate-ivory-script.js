@@ -133,7 +133,7 @@ https://www.tooplate.com/view/2166-ivory-flow
       plainName: 'Le Nœud Papillon Automne',
       price: 'Sur devis',
       desc: "Composé de fleurs séchées prises dans la résine et rehaussé d'éclats dorés. Fixation en suédine, façonné à la main dans mon atelier.",
-      specs: ['Résine &amp; fleurs séchées', 'Suédine', 'Pièce sur commande', 'Fabrication française']
+      specs: 'Résine et fleurs séchées, fixation en suédine — pièce réalisée sur commande, fabriquée en France.'
     },
     {
       images: ['images/boucles-herbier-jaune-velours.jpg'],
@@ -143,7 +143,7 @@ https://www.tooplate.com/view/2166-ivory-flow
       plainName: "Boucles d'Oreilles Herbier Jaune Velours",
       price: '16€', // prix provisoire, à confirmer
       desc: "Un assemblage de fleurs séchées jaunes prises dans la résine, à la forme organique et aux éclats dorés. Façonnées à la main dans mon atelier.",
-      specs: ['Résine &amp; fleurs séchées', 'Crochets dorés', 'Pièce sur commande', 'Fabrication française']
+      specs: 'Résine et fleurs séchées, crochets dorés — confectionnée à la demande, conçue en France.'
     },
     {
       images: ['images/boucles-transparente-cuivre-bordeaux.jpg'],
@@ -153,7 +153,7 @@ https://www.tooplate.com/view/2166-ivory-flow
       plainName: "Boucles d'Oreilles Transparente Cuivre & Bordeaux",
       price: '17€', // prix provisoire, à confirmer
       desc: "Une composition transparente à éclats cuivrés, prolongée d'une perle bordeaux. Résine façonnée à la main dans mon atelier.",
-      specs: ['Résine &amp; fleurs séchées', 'Crochets dorés', 'Pièce sur commande', 'Fabrication française']
+      specs: 'Résine et fleurs séchées, crochets dorés — créée sur commande, fabrication 100% française.'
     }
   ];
 
@@ -172,7 +172,7 @@ https://www.tooplate.com/view/2166-ivory-flow
     var nameEl = productSection.querySelector('.product-name');
     var priceEl = productSection.querySelector('.product-price');
     var descEl = productSection.querySelector('.product-desc');
-    var specDds = productSection.querySelectorAll('.product-spec dd');
+    var specsEl = productSection.querySelector('.product-specs');
     var productCta = productSection.querySelector('#productCta');
 
     function renderThumbs(data) {
@@ -207,7 +207,7 @@ https://www.tooplate.com/view/2166-ivory-flow
       nameEl.innerHTML = data.name;
       priceEl.textContent = data.price;
       descEl.textContent = data.desc;
-      specDds.forEach(function(dd, i) { dd.innerHTML = data.specs[i]; });
+      specsEl.innerHTML = data.specs;
       productCta.href = buildWhatsAppLink(data.plainName);
       productDots.forEach(function(dot, i) {
         var active = i === index;
