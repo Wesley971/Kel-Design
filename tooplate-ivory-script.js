@@ -161,9 +161,9 @@ https://www.tooplate.com/view/2166-ivory-flow
   var productSection = document.querySelector('.product');
   var productPrevBtn = document.getElementById('productPrev');
   var productNextBtn = document.getElementById('productNext');
-  var productDots = document.querySelectorAll('.product-dot');
+  var productDotsContainer = document.querySelector('.product-dots');
 
-  if (productSection && productPrevBtn && productNextBtn && productDots.length) {
+  if (productSection && productPrevBtn && productNextBtn && productDotsContainer) {
     var currentSlide = 0;
     var isTransitioning = false;
     var infoContent = productSection.querySelector('.product-info-content');
@@ -175,6 +175,7 @@ https://www.tooplate.com/view/2166-ivory-flow
     var descEl = productSection.querySelector('.product-desc');
     var specsEl = productSection.querySelector('.product-specs');
     var productCta = productSection.querySelector('#productCta');
+    var productDots;
 
     function renderThumbs(data) {
       thumbsEl.innerHTML = '';
@@ -218,6 +219,22 @@ https://www.tooplate.com/view/2166-ivory-flow
       });
     }
 
+    function renderDots() {
+      productDotsContainer.innerHTML = '';
+      productSlides.forEach(function(slide, i) {
+        var dot = document.createElement('button');
+        dot.className = 'product-dot' + (i === 0 ? ' is-active' : '');
+        dot.setAttribute('data-slide', i);
+        dot.setAttribute('aria-label', 'Voir la pièce ' + (i + 1));
+        if (i === 0) dot.setAttribute('aria-current', 'true');
+        dot.addEventListener('click', function() {
+          goToSlide(i);
+        });
+        productDotsContainer.appendChild(dot);
+      });
+      productDots = productDotsContainer.querySelectorAll('.product-dot');
+    }
+
     function goToSlide(index) {
       if (isTransitioning || index === currentSlide) return;
       isTransitioning = true;
@@ -245,12 +262,7 @@ https://www.tooplate.com/view/2166-ivory-flow
       goToSlide((currentSlide + 1) % productSlides.length);
     });
 
-    productDots.forEach(function(dot) {
-      dot.addEventListener('click', function() {
-        goToSlide(parseInt(dot.getAttribute('data-slide'), 10));
-      });
-    });
-
+    renderDots();
     renderThumbs(productSlides[currentSlide]);
     productCta.href = buildWhatsAppLink(productSlides[currentSlide].plainName);
   }
