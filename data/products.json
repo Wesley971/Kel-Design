@@ -2,38 +2,44 @@
   {
     "id": "herbier-jaune-velours",
     "name": "Herbier Jaune Velours",
-    "heading": "Boucles d'Oreilles<br>Herbier Jaune Velours",
-    "plainName": "Boucles d'Oreilles Herbier Jaune Velours",
     "category": "boucles-oreilles",
     "availability": "disponible",
-    "price": "16€",
+    "price": "50",
     "priceConfirmed": false,
     "images": [
-      { "src": "images/boucles-herbier-jaune-velours.jpg", "alt": "Boucles d'oreilles herbier jaune sur fond bleu nuit" }
+      {
+        "src": "images/boucles-herbier-jaune-velours.jpg",
+        "alt": "Boucles d'oreilles herbier jaune sur fond bleu nuit"
+      }
     ],
+    "featured": true,
+    "featuredOrder": 2,
+    "heading": "Boucles d'Oreilles<br>Herbier Jaune Velours",
+    "plainName": "Boucles d'Oreilles Herbier Jaune Velours",
     "badge": "Pièce Signature",
     "desc": "Un assemblage de fleurs séchées jaunes prises dans la résine, à la forme organique et aux éclats dorés. Façonnées à la main dans mon atelier.",
-    "specs": "Résine et fleurs séchées, crochets dorés — confectionnée à la demande, conçue en France.",
-    "featured": true,
-    "featuredOrder": 2
+    "specs": "Résine et fleurs séchées, crochets dorés — confectionnée à la demande, conçue en France."
   },
   {
     "id": "transparente-cuivre-bordeaux",
     "name": "Transparente Cuivre & Bordeaux",
-    "heading": "Boucles d'Oreilles<br>Transparente Cuivre &amp; Bordeaux",
-    "plainName": "Boucles d'Oreilles Transparente Cuivre & Bordeaux",
     "category": "boucles-oreilles",
     "availability": "disponible",
     "price": "17€",
     "priceConfirmed": false,
     "images": [
-      { "src": "images/boucles-transparente-cuivre-bordeaux.jpg", "alt": "Boucles d'oreilles transparentes à éclats cuivrés et perle bordeaux" }
+      {
+        "src": "images/boucles-transparente-cuivre-bordeaux.jpg",
+        "alt": "Boucles d'oreilles transparentes à éclats cuivrés et perle bordeaux"
+      }
     ],
+    "featured": true,
+    "featuredOrder": 3,
+    "heading": "Boucles d'Oreilles<br>Transparente Cuivre &amp; Bordeaux",
+    "plainName": "Boucles d'Oreilles Transparente Cuivre & Bordeaux",
     "badge": "Pièce Signature",
     "desc": "Une composition transparente à éclats cuivrés, prolongée d'une perle bordeaux. Résine façonnée à la main dans mon atelier.",
-    "specs": "Résine et fleurs séchées, crochets dorés — créée sur commande, fabrication 100% française.",
-    "featured": true,
-    "featuredOrder": 3
+    "specs": "Résine et fleurs séchées, crochets dorés — créée sur commande, fabrication 100% française."
   },
   {
     "id": "leopard-rose-degrade",
@@ -43,8 +49,18 @@
     "price": "18€",
     "priceConfirmed": false,
     "images": [
-      { "src": "images/boucles-leopard-rose-degrade.jpg", "alt": "Boucles d'oreilles léopard dégradé rose et corail en résine" }
-    ]
+      {
+        "src": "images/boucles-leopard-rose-degrade.jpg",
+        "alt": "Boucles d'oreilles léopard dégradé rose et corail en résine"
+      }
+    ],
+    "featured": false,
+    "featuredOrder": null,
+    "heading": "",
+    "plainName": "",
+    "badge": "Pièce Signature",
+    "desc": "",
+    "specs": ""
   },
   {
     "id": "orange-alveole-automne",
@@ -54,8 +70,18 @@
     "price": "18€",
     "priceConfirmed": false,
     "images": [
-      { "src": "images/boucles-orange-alveole-automne.jpg", "alt": "Boucles d'oreilles alvéole orange et rouge en résine" }
-    ]
+      {
+        "src": "images/boucles-orange-alveole-automne.jpg",
+        "alt": "Boucles d'oreilles alvéole orange et rouge en résine"
+      }
+    ],
+    "featured": false,
+    "featuredOrder": null,
+    "heading": "",
+    "plainName": "",
+    "badge": "Pièce Signature",
+    "desc": "",
+    "specs": ""
   },
   {
     "id": "dorees-perle-emeraude",
@@ -65,8 +91,18 @@
     "price": "17€",
     "priceConfirmed": false,
     "images": [
-      { "src": "images/boucles-dorees-perle-emeraude.jpg", "alt": "Boucles d'oreilles dorées à perle émeraude" }
-    ]
+      {
+        "src": "images/boucles-dorees-perle-emeraude.jpg",
+        "alt": "Boucles d'oreilles dorées à perle émeraude"
+      }
+    ],
+    "featured": false,
+    "featuredOrder": null,
+    "heading": "",
+    "plainName": "",
+    "badge": "Pièce Signature",
+    "desc": "",
+    "specs": ""
   },
   {
     "id": "triple-cercle-turquoise",
@@ -76,8 +112,18 @@
     "price": "20€",
     "priceConfirmed": false,
     "images": [
-      { "src": "images/boucles-triple-cercle-turquoise.jpg", "alt": "Boucles d'oreilles triple cercle turquoise et transparent" }
-    ]
+      {
+        "src": "images/boucles-triple-cercle-turquoise.jpg",
+        "alt": "Boucles d'oreilles triple cercle turquoise et transparent"
+      }
+    ],
+    "featured": false,
+    "featuredOrder": null,
+    "heading": "",
+    "plainName": "",
+    "badge": "Pièce Signature",
+    "desc": "",
+    "specs": ""
   },
   {
     "id": "goutte-doree-malachite",
@@ -87,8 +133,18 @@
     "price": "14€",
     "priceConfirmed": false,
     "images": [
-      { "src": "images/boucles-goutte-doree-malachite.jpg", "alt": "Boucles d'oreilles goutte transparente à éclats dorés" }
-    ]
+      {
+        "src": "images/boucles-goutte-doree-malachite.jpg",
+        "alt": "Boucles d'oreilles goutte transparente à éclats dorés"
+      }
+    ],
+    "featured": false,
+    "featuredOrder": null,
+    "heading": "",
+    "plainName": "",
+    "badge": "Pièce Signature",
+    "desc": "",
+    "specs": ""
   },
   {
     "id": "triple-disque-corail",
@@ -98,8 +154,18 @@
     "price": "20€",
     "priceConfirmed": false,
     "images": [
-      { "src": "images/boucles-triple-disque-corail.jpg", "alt": "Boucles d'oreilles triple disque corail et orange" }
-    ]
+      {
+        "src": "images/boucles-triple-disque-corail.jpg",
+        "alt": "Boucles d'oreilles triple disque corail et orange"
+      }
+    ],
+    "featured": false,
+    "featuredOrder": null,
+    "heading": "",
+    "plainName": "",
+    "badge": "Pièce Signature",
+    "desc": "",
+    "specs": ""
   },
   {
     "id": "herbier-perle-rouge",
@@ -109,8 +175,18 @@
     "price": "17€",
     "priceConfirmed": false,
     "images": [
-      { "src": "images/boucles-herbier-perle-rouge.jpg", "alt": "Boucles d'oreilles herbier doré à perle rouge" }
-    ]
+      {
+        "src": "images/boucles-herbier-perle-rouge.jpg",
+        "alt": "Boucles d'oreilles herbier doré à perle rouge"
+      }
+    ],
+    "featured": false,
+    "featuredOrder": null,
+    "heading": "",
+    "plainName": "",
+    "badge": "Pièce Signature",
+    "desc": "",
+    "specs": ""
   },
   {
     "id": "violette-feuille-doree",
@@ -120,8 +196,18 @@
     "price": "18€",
     "priceConfirmed": false,
     "images": [
-      { "src": "images/boucles-violette-feuille-doree.jpg", "alt": "Boucles d'oreilles feuille violette à éclats dorés" }
-    ]
+      {
+        "src": "images/boucles-violette-feuille-doree.jpg",
+        "alt": "Boucles d'oreilles feuille violette à éclats dorés"
+      }
+    ],
+    "featured": false,
+    "featuredOrder": null,
+    "heading": "",
+    "plainName": "",
+    "badge": "Pièce Signature",
+    "desc": "",
+    "specs": ""
   },
   {
     "id": "orange-fuchsia-organique",
@@ -131,8 +217,18 @@
     "price": "16€",
     "priceConfirmed": false,
     "images": [
-      { "src": "images/boucles-orange-fuchsia-organique.jpg", "alt": "Boucles d'oreilles organiques orange et fuchsia" }
-    ]
+      {
+        "src": "images/boucles-orange-fuchsia-organique.jpg",
+        "alt": "Boucles d'oreilles organiques orange et fuchsia"
+      }
+    ],
+    "featured": false,
+    "featuredOrder": null,
+    "heading": "",
+    "plainName": "",
+    "badge": "Pièce Signature",
+    "desc": "",
+    "specs": ""
   },
   {
     "id": "geometrique-paillettes",
@@ -142,8 +238,18 @@
     "price": "17€",
     "priceConfirmed": false,
     "images": [
-      { "src": "images/boucles-geometrique-paillettes.jpg", "alt": "Boucles d'oreilles géométriques pailletées noires et argentées" }
-    ]
+      {
+        "src": "images/boucles-geometrique-paillettes.jpg",
+        "alt": "Boucles d'oreilles géométriques pailletées noires et argentées"
+      }
+    ],
+    "featured": false,
+    "featuredOrder": null,
+    "heading": "",
+    "plainName": "",
+    "badge": "Pièce Signature",
+    "desc": "",
+    "specs": ""
   },
   {
     "id": "violette-fleurie",
@@ -153,8 +259,18 @@
     "price": "24€",
     "priceConfirmed": true,
     "images": [
-      { "src": "images/boucles-violette-fleurs.jpg", "alt": "Boucles d'oreilles violettes avec breloque fleurie" }
-    ]
+      {
+        "src": "images/boucles-violette-fleurs.jpg",
+        "alt": "Boucles d'oreilles violettes avec breloque fleurie"
+      }
+    ],
+    "featured": false,
+    "featuredOrder": null,
+    "heading": "",
+    "plainName": "",
+    "badge": "Pièce Signature",
+    "desc": "",
+    "specs": ""
   },
   {
     "id": "feuille-rose",
@@ -164,27 +280,43 @@
     "price": "22€",
     "priceConfirmed": true,
     "images": [
-      { "src": "images/boucles-feuille-rose.jpg", "alt": "Boucles d'oreilles feuille rose en résine" }
-    ]
+      {
+        "src": "images/boucles-feuille-rose.jpg",
+        "alt": "Boucles d'oreilles feuille rose en résine"
+      }
+    ],
+    "featured": false,
+    "featuredOrder": null,
+    "heading": "",
+    "plainName": "",
+    "badge": "Pièce Signature",
+    "desc": "",
+    "specs": ""
   },
   {
     "id": "noeud-automne",
     "name": "Nœud Automne",
-    "heading": "Le Nœud Papillon<br>Automne",
-    "plainName": "Le Nœud Papillon Automne",
     "category": "noeud",
     "availability": "disponible",
     "price": "Sur devis",
     "priceConfirmed": true,
     "images": [
-      { "src": "images/noeud-automne-1.jpg", "alt": "Nœud papillon Automne, pièce signature KEL Design" },
-      { "src": "images/noeud-automne-2.jpg", "alt": "Nœud papillon Automne, vue rapprochée sur les éclats dorés et fleurs séchées" }
+      {
+        "src": "images/noeud-automne-1.jpg",
+        "alt": "Nœud papillon Automne, pièce signature KEL Design"
+      },
+      {
+        "src": "images/noeud-automne-2.jpg",
+        "alt": "Nœud papillon Automne, vue rapprochée sur les éclats dorés et fleurs séchées"
+      }
     ],
+    "featured": true,
+    "featuredOrder": 1,
+    "heading": "Le Nœud Papillon<br>Automne",
+    "plainName": "Le Nœud Papillon Automne",
     "badge": "Pièce Signature",
     "desc": "Composé de fleurs séchées prises dans la résine et rehaussé d'éclats dorés. Fixation en suédine, façonné à la main dans mon atelier.",
-    "specs": "Résine et fleurs séchées, fixation en suédine — pièce réalisée sur commande, fabriquée en France.",
-    "featured": true,
-    "featuredOrder": 1
+    "specs": "Résine et fleurs séchées, fixation en suédine — pièce réalisée sur commande, fabriquée en France."
   },
   {
     "id": "or-corail",
@@ -194,8 +326,18 @@
     "price": "24€",
     "priceConfirmed": true,
     "images": [
-      { "src": "images/boucles-or-corail.jpg", "alt": "Boucles d'oreilles or et corail" }
-    ]
+      {
+        "src": "images/boucles-or-corail.jpg",
+        "alt": "Boucles d'oreilles or et corail"
+      }
+    ],
+    "featured": false,
+    "featuredOrder": null,
+    "heading": "",
+    "plainName": "",
+    "badge": "Pièce Signature",
+    "desc": "",
+    "specs": ""
   },
   {
     "id": "vert-rose",
@@ -205,8 +347,18 @@
     "price": "22€",
     "priceConfirmed": true,
     "images": [
-      { "src": "images/boucles-vert-rose.jpg", "alt": "Boucles d'oreilles vert et rose" }
-    ]
+      {
+        "src": "images/boucles-vert-rose.jpg",
+        "alt": "Boucles d'oreilles vert et rose"
+      }
+    ],
+    "featured": false,
+    "featuredOrder": null,
+    "heading": "",
+    "plainName": "",
+    "badge": "Pièce Signature",
+    "desc": "",
+    "specs": ""
   },
   {
     "id": "blanc-vert",
@@ -216,8 +368,18 @@
     "price": "22€",
     "priceConfirmed": true,
     "images": [
-      { "src": "images/boucles-blanc-vert.jpg", "alt": "Boucles d'oreilles blanc et vert, éclats dorés" }
-    ]
+      {
+        "src": "images/boucles-blanc-vert.jpg",
+        "alt": "Boucles d'oreilles blanc et vert, éclats dorés"
+      }
+    ],
+    "featured": false,
+    "featuredOrder": null,
+    "heading": "",
+    "plainName": "",
+    "badge": "Pièce Signature",
+    "desc": "",
+    "specs": ""
   },
   {
     "id": "pendentif-resine",
@@ -225,7 +387,15 @@
     "category": "pendentif",
     "availability": "bientot",
     "price": "",
-    "images": []
+    "priceConfirmed": true,
+    "images": [],
+    "featured": false,
+    "featuredOrder": null,
+    "heading": "",
+    "plainName": "",
+    "badge": "Pièce Signature",
+    "desc": "",
+    "specs": ""
   },
   {
     "id": "pendentif-fleur-sechee",
@@ -233,7 +403,15 @@
     "category": "pendentif",
     "availability": "bientot",
     "price": "",
-    "images": []
+    "priceConfirmed": true,
+    "images": [],
+    "featured": false,
+    "featuredOrder": null,
+    "heading": "",
+    "plainName": "",
+    "badge": "Pièce Signature",
+    "desc": "",
+    "specs": ""
   },
   {
     "id": "bracelet-fin",
@@ -241,7 +419,15 @@
     "category": "bracelet",
     "availability": "bientot",
     "price": "",
-    "images": []
+    "priceConfirmed": true,
+    "images": [],
+    "featured": false,
+    "featuredOrder": null,
+    "heading": "",
+    "plainName": "",
+    "badge": "Pièce Signature",
+    "desc": "",
+    "specs": ""
   },
   {
     "id": "bracelet-resine",
@@ -249,7 +435,15 @@
     "category": "bracelet",
     "availability": "bientot",
     "price": "",
-    "images": []
+    "priceConfirmed": true,
+    "images": [],
+    "featured": false,
+    "featuredOrder": null,
+    "heading": "",
+    "plainName": "",
+    "badge": "Pièce Signature",
+    "desc": "",
+    "specs": ""
   },
   {
     "id": "bague-fleur",
@@ -257,7 +451,15 @@
     "category": "bague",
     "availability": "bientot",
     "price": "",
-    "images": []
+    "priceConfirmed": true,
+    "images": [],
+    "featured": false,
+    "featuredOrder": null,
+    "heading": "",
+    "plainName": "",
+    "badge": "Pièce Signature",
+    "desc": "",
+    "specs": ""
   },
   {
     "id": "bague-resine",
@@ -265,6 +467,14 @@
     "category": "bague",
     "availability": "bientot",
     "price": "",
-    "images": []
+    "priceConfirmed": true,
+    "images": [],
+    "featured": false,
+    "featuredOrder": null,
+    "heading": "",
+    "plainName": "",
+    "badge": "Pièce Signature",
+    "desc": "",
+    "specs": ""
   }
 ]
