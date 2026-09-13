@@ -20,7 +20,7 @@ collections:
             widget: "list"
             root: true
             label_singular: "bijou"
-            summary: "{{name}} — {{price}}"
+            summary: "{{name}}"
             fields:
               - label: "Identifiant"
                 name: "id"
@@ -53,11 +53,23 @@ collections:
                   - { label: "Disponible", value: "disponible" }
                   - { label: "Bientôt (pas encore de photo)", value: "bientot" }
 
-              - label: "Prix"
+              - label: "Type de prix"
+                name: "priceType"
+                widget: "select"
+                required: true
+                default: "fixe"
+                options:
+                  - { label: "Prix fixe", value: "fixe" }
+                  - { label: "Sur devis", value: "devis" }
+                hint: "Le champ \"Prix\" ci-dessous n'est utilisé que si \"Prix fixe\" est sélectionné."
+
+              - label: "Prix (en euros, sans le symbole €)"
                 name: "price"
-                widget: "string"
+                widget: "number"
+                value_type: "float"
                 required: false
-                hint: "Laisser vide pour une pièce \"Bientôt\". Peut aussi être un texte comme \"Sur devis\"."
+                min: 0
+                hint: "Ignoré si \"Sur devis\" est sélectionné ci-dessus. Laisser vide pour une pièce \"Bientôt\"."
 
               - label: "Prix confirmé"
                 name: "priceConfirmed"

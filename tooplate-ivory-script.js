@@ -23,6 +23,11 @@ https://www.tooplate.com/view/2166-ivory-flow
     return 'https://wa.me/33768728002?text=' + encodeURIComponent('Bonjour, je suis intéressée par : ' + pieceName);
   }
 
+  function formatPrice(product) {
+    if (product.priceType === 'devis') return 'Sur devis';
+    return typeof product.price === 'number' ? product.price + '€' : '';
+  }
+
   fetch('data/products.json')
     .then(function(res) {
       if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -198,7 +203,7 @@ https://www.tooplate.com/view/2166-ivory-flow
       renderThumbs(data);
       badgeEl.textContent = data.badge;
       nameEl.innerHTML = data.heading;
-      priceEl.textContent = data.price;
+      priceEl.textContent = formatPrice(data);
       descEl.textContent = data.desc;
       specsEl.innerHTML = data.specs;
       productCta.href = buildWhatsAppLink(data.plainName);
