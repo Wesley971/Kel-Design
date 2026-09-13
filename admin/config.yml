@@ -2,9 +2,7 @@ backend:
   name: github
   repo: Wesley971/Kel-Design
   branch: master
-  # À renseigner une fois le Worker Cloudflare déployé (KD-42, sous-tâche 3).
-  # Sans ça, la connexion à /admin ne fonctionnera pas — attendu à ce stade.
-  base_url: "https://REMPLACER-PAR-URL-DU-WORKER-CLOUDFLARE.workers.dev"
+  base_url: "https://sveltia-cms-auth.abdoulwes.workers.dev"
 
 media_folder: "images"
 public_folder: "images"
