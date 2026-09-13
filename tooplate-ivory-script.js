@@ -9,48 +9,34 @@ https://www.tooplate.com/view/2166-ivory-flow
 (function() {
   'use strict';
 
-  /* ── Product data: single source of truth for the signature carousel ── */
-  var productSlides = [
-    {
-      images: ['images/noeud-automne-1.jpg', 'images/noeud-automne-2.jpg'],
-      alts: [
-        'Nœud papillon Automne, pièce signature KEL Design',
-        'Nœud papillon Automne, vue rapprochée sur les éclats dorés et fleurs séchées'
-      ],
-      badge: 'Pièce Signature',
-      name: 'Le Nœud Papillon<br>Automne',
-      plainName: 'Le Nœud Papillon Automne',
-      price: 'Sur devis',
-      desc: "Composé de fleurs séchées prises dans la résine et rehaussé d'éclats dorés. Fixation en suédine, façonné à la main dans mon atelier.",
-      specs: 'Résine et fleurs séchées, fixation en suédine — pièce réalisée sur commande, fabriquée en France.'
-    },
-    {
-      images: ['images/boucles-herbier-jaune-velours.jpg'],
-      alts: ["Boucles d'oreilles herbier jaune sur fond bleu nuit"],
-      badge: 'Pièce Signature',
-      name: "Boucles d'Oreilles<br>Herbier Jaune Velours",
-      plainName: "Boucles d'Oreilles Herbier Jaune Velours",
-      price: '16€', // prix provisoire, à confirmer
-      desc: "Un assemblage de fleurs séchées jaunes prises dans la résine, à la forme organique et aux éclats dorés. Façonnées à la main dans mon atelier.",
-      specs: 'Résine et fleurs séchées, crochets dorés — confectionnée à la demande, conçue en France.'
-    },
-    {
-      images: ['images/boucles-transparente-cuivre-bordeaux.jpg'],
-      alts: ["Boucles d'oreilles transparentes à éclats cuivrés et perle bordeaux"],
-      badge: 'Pièce Signature',
-      name: "Boucles d'Oreilles<br>Transparente Cuivre &amp; Bordeaux",
-      plainName: "Boucles d'Oreilles Transparente Cuivre & Bordeaux",
-      price: '17€', // prix provisoire, à confirmer
-      desc: "Une composition transparente à éclats cuivrés, prolongée d'une perle bordeaux. Résine façonnée à la main dans mon atelier.",
-      specs: 'Résine et fleurs séchées, crochets dorés — créée sur commande, fabrication 100% française.'
-    }
-  ];
+  /* ── Product data: single source of truth for the signature carousel ──
+     Loaded from data/products.json (fetch below); starts empty so any code
+     that runs before the fetch resolves sees an empty array rather than
+     undefined. The static HTML already showing slide 0 is the fallback
+     while this loads (and if the fetch fails). ── */
+  var productSlides = [];
+  var currentSlide = 0;
 
   var openLightbox;
 
   function buildWhatsAppLink(pieceName) {
     return 'https://wa.me/33768728002?text=' + encodeURIComponent('Bonjour, je suis intéressée par : ' + pieceName);
   }
+
+  fetch('data/products.json')
+    .then(function(res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(function(allProducts) {
+      productSlides = allProducts
+        .filter(function(p) { return p.featured; })
+        .sort(function(a, b) { return a.featuredOrder - b.featuredOrder; });
+      initProductCarousel();
+    })
+    .catch(function(err) {
+      console.error('Carrousel produit : échec du chargement de data/products.json', err);
+    });
 
   /* ── Timeline items — fade in at center viewport ── */
   var timelineItems = document.querySelectorAll('[data-timeline]');
@@ -120,6 +106,7 @@ https://www.tooplate.com/view/2166-ivory-flow
 
   if (productZone) {
     productZone.addEventListener('click', function() {
+      if (!productSlides[currentSlide]) return;
       window.open(buildWhatsAppLink(productSlides[currentSlide].plainName), '_blank', 'noopener');
     });
   }
@@ -163,8 +150,8 @@ https://www.tooplate.com/view/2166-ivory-flow
   var productNextBtn = document.getElementById('productNext');
   var productDotsContainer = document.querySelector('.product-dots');
 
-  if (productSection && productPrevBtn && productNextBtn && productDotsContainer) {
-    var currentSlide = 0;
+  function initProductCarousel() {
+    if (!productSection || !productPrevBtn || !productNextBtn || !productDotsContainer) return;
     var isTransitioning = false;
     var infoContent = productSection.querySelector('.product-info-content');
     var slideImg = productSection.querySelector('.product-main-img');
@@ -179,12 +166,12 @@ https://www.tooplate.com/view/2166-ivory-flow
 
     function renderThumbs(data) {
       thumbsEl.innerHTML = '';
-      if (data.images.length <= 1) {
+      if (data.photos.length <= 1) {
         thumbsEl.classList.remove('is-visible');
         return;
       }
       thumbsEl.classList.add('is-visible');
-      data.images.forEach(function(src, i) {
+      data.photos.forEach(function(src, i) {
         var thumb = document.createElement('button');
         thumb.className = 'product-thumb' + (i === 0 ? ' is-active' : '');
         thumb.style.backgroundImage = 'url(' + src + ')';
@@ -202,11 +189,11 @@ https://www.tooplate.com/view/2166-ivory-flow
 
     function renderSlide(index) {
       var data = productSlides[index];
-      slideImg.src = data.images[0];
+      slideImg.src = data.photos[0];
       slideImg.alt = data.alts[0];
       renderThumbs(data);
       badgeEl.textContent = data.badge;
-      nameEl.innerHTML = data.name;
+      nameEl.innerHTML = data.heading;
       priceEl.textContent = data.price;
       descEl.textContent = data.desc;
       specsEl.innerHTML = data.specs;
@@ -263,8 +250,7 @@ https://www.tooplate.com/view/2166-ivory-flow
     });
 
     renderDots();
-    renderThumbs(productSlides[currentSlide]);
-    productCta.href = buildWhatsAppLink(productSlides[currentSlide].plainName);
+    renderSlide(currentSlide);
   }
 
   /* ── Lookbook: Momentum drag + Arrow buttons ── */

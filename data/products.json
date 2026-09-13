@@ -1,0 +1,260 @@
+[
+  {
+    "id": "herbier-jaune-velours",
+    "name": "Herbier Jaune Velours",
+    "heading": "Boucles d'Oreilles<br>Herbier Jaune Velours",
+    "plainName": "Boucles d'Oreilles Herbier Jaune Velours",
+    "category": "boucles-oreilles",
+    "availability": "disponible",
+    "price": "16€",
+    "priceConfirmed": false,
+    "photos": ["images/boucles-herbier-jaune-velours.jpg"],
+    "alts": ["Boucles d'oreilles herbier jaune sur fond bleu nuit"],
+    "badge": "Pièce Signature",
+    "desc": "Un assemblage de fleurs séchées jaunes prises dans la résine, à la forme organique et aux éclats dorés. Façonnées à la main dans mon atelier.",
+    "specs": "Résine et fleurs séchées, crochets dorés — confectionnée à la demande, conçue en France.",
+    "featured": true,
+    "featuredOrder": 2
+  },
+  {
+    "id": "transparente-cuivre-bordeaux",
+    "name": "Transparente Cuivre & Bordeaux",
+    "heading": "Boucles d'Oreilles<br>Transparente Cuivre &amp; Bordeaux",
+    "plainName": "Boucles d'Oreilles Transparente Cuivre & Bordeaux",
+    "category": "boucles-oreilles",
+    "availability": "disponible",
+    "price": "17€",
+    "priceConfirmed": false,
+    "photos": ["images/boucles-transparente-cuivre-bordeaux.jpg"],
+    "alts": ["Boucles d'oreilles transparentes à éclats cuivrés et perle bordeaux"],
+    "badge": "Pièce Signature",
+    "desc": "Une composition transparente à éclats cuivrés, prolongée d'une perle bordeaux. Résine façonnée à la main dans mon atelier.",
+    "specs": "Résine et fleurs séchées, crochets dorés — créée sur commande, fabrication 100% française.",
+    "featured": true,
+    "featuredOrder": 3
+  },
+  {
+    "id": "leopard-rose-degrade",
+    "name": "Léopard Rose Dégradé",
+    "category": "boucles-oreilles",
+    "availability": "disponible",
+    "price": "18€",
+    "priceConfirmed": false,
+    "photos": ["images/boucles-leopard-rose-degrade.jpg"],
+    "alts": ["Boucles d'oreilles léopard dégradé rose et corail en résine"]
+  },
+  {
+    "id": "orange-alveole-automne",
+    "name": "Orange Alvéole Automne",
+    "category": "boucles-oreilles",
+    "availability": "disponible",
+    "price": "18€",
+    "priceConfirmed": false,
+    "photos": ["images/boucles-orange-alveole-automne.jpg"],
+    "alts": ["Boucles d'oreilles alvéole orange et rouge en résine"]
+  },
+  {
+    "id": "dorees-perle-emeraude",
+    "name": "Dorées Perle Émeraude",
+    "category": "boucles-oreilles",
+    "availability": "disponible",
+    "price": "17€",
+    "priceConfirmed": false,
+    "photos": ["images/boucles-dorees-perle-emeraude.jpg"],
+    "alts": ["Boucles d'oreilles dorées à perle émeraude"]
+  },
+  {
+    "id": "triple-cercle-turquoise",
+    "name": "Triple Cercle Turquoise",
+    "category": "boucles-oreilles",
+    "availability": "disponible",
+    "price": "20€",
+    "priceConfirmed": false,
+    "photos": ["images/boucles-triple-cercle-turquoise.jpg"],
+    "alts": ["Boucles d'oreilles triple cercle turquoise et transparent"]
+  },
+  {
+    "id": "goutte-doree-malachite",
+    "name": "Goutte Dorée Malachite",
+    "category": "boucles-oreilles",
+    "availability": "disponible",
+    "price": "14€",
+    "priceConfirmed": false,
+    "photos": ["images/boucles-goutte-doree-malachite.jpg"],
+    "alts": ["Boucles d'oreilles goutte transparente à éclats dorés"]
+  },
+  {
+    "id": "triple-disque-corail",
+    "name": "Triple Disque Corail",
+    "category": "boucles-oreilles",
+    "availability": "disponible",
+    "price": "20€",
+    "priceConfirmed": false,
+    "photos": ["images/boucles-triple-disque-corail.jpg"],
+    "alts": ["Boucles d'oreilles triple disque corail et orange"]
+  },
+  {
+    "id": "herbier-perle-rouge",
+    "name": "Herbier Perle Rouge",
+    "category": "boucles-oreilles",
+    "availability": "disponible",
+    "price": "17€",
+    "priceConfirmed": false,
+    "photos": ["images/boucles-herbier-perle-rouge.jpg"],
+    "alts": ["Boucles d'oreilles herbier doré à perle rouge"]
+  },
+  {
+    "id": "violette-feuille-doree",
+    "name": "Violette Feuille Dorée",
+    "category": "boucles-oreilles",
+    "availability": "disponible",
+    "price": "18€",
+    "priceConfirmed": false,
+    "photos": ["images/boucles-violette-feuille-doree.jpg"],
+    "alts": ["Boucles d'oreilles feuille violette à éclats dorés"]
+  },
+  {
+    "id": "orange-fuchsia-organique",
+    "name": "Orange Fuchsia Organique",
+    "category": "boucles-oreilles",
+    "availability": "disponible",
+    "price": "16€",
+    "priceConfirmed": false,
+    "photos": ["images/boucles-orange-fuchsia-organique.jpg"],
+    "alts": ["Boucles d'oreilles organiques orange et fuchsia"]
+  },
+  {
+    "id": "geometrique-paillettes",
+    "name": "Géométrique Paillettes",
+    "category": "boucles-oreilles",
+    "availability": "disponible",
+    "price": "17€",
+    "priceConfirmed": false,
+    "photos": ["images/boucles-geometrique-paillettes.jpg"],
+    "alts": ["Boucles d'oreilles géométriques pailletées noires et argentées"]
+  },
+  {
+    "id": "violette-fleurie",
+    "name": "Violette Fleurie",
+    "category": "boucles-oreilles",
+    "availability": "disponible",
+    "price": "24€",
+    "priceConfirmed": true,
+    "photos": ["images/boucles-violette-fleurs.jpg"],
+    "alts": ["Boucles d'oreilles violettes avec breloque fleurie"]
+  },
+  {
+    "id": "feuille-rose",
+    "name": "Feuille Rose",
+    "category": "boucles-oreilles",
+    "availability": "disponible",
+    "price": "22€",
+    "priceConfirmed": true,
+    "photos": ["images/boucles-feuille-rose.jpg"],
+    "alts": ["Boucles d'oreilles feuille rose en résine"]
+  },
+  {
+    "id": "noeud-automne",
+    "name": "Nœud Automne",
+    "heading": "Le Nœud Papillon<br>Automne",
+    "plainName": "Le Nœud Papillon Automne",
+    "category": "noeud",
+    "availability": "disponible",
+    "price": "Sur devis",
+    "priceConfirmed": true,
+    "photos": ["images/noeud-automne-1.jpg", "images/noeud-automne-2.jpg"],
+    "alts": [
+      "Nœud papillon Automne, pièce signature KEL Design",
+      "Nœud papillon Automne, vue rapprochée sur les éclats dorés et fleurs séchées"
+    ],
+    "badge": "Pièce Signature",
+    "desc": "Composé de fleurs séchées prises dans la résine et rehaussé d'éclats dorés. Fixation en suédine, façonné à la main dans mon atelier.",
+    "specs": "Résine et fleurs séchées, fixation en suédine — pièce réalisée sur commande, fabriquée en France.",
+    "featured": true,
+    "featuredOrder": 1
+  },
+  {
+    "id": "or-corail",
+    "name": "Or Corail",
+    "category": "boucles-oreilles",
+    "availability": "disponible",
+    "price": "24€",
+    "priceConfirmed": true,
+    "photos": ["images/boucles-or-corail.jpg"],
+    "alts": ["Boucles d'oreilles or et corail"]
+  },
+  {
+    "id": "vert-rose",
+    "name": "Vert & Rose",
+    "category": "boucles-oreilles",
+    "availability": "disponible",
+    "price": "22€",
+    "priceConfirmed": true,
+    "photos": ["images/boucles-vert-rose.jpg"],
+    "alts": ["Boucles d'oreilles vert et rose"]
+  },
+  {
+    "id": "blanc-vert",
+    "name": "Blanc & Vert",
+    "category": "boucles-oreilles",
+    "availability": "disponible",
+    "price": "22€",
+    "priceConfirmed": true,
+    "photos": ["images/boucles-blanc-vert.jpg"],
+    "alts": ["Boucles d'oreilles blanc et vert, éclats dorés"]
+  },
+  {
+    "id": "pendentif-resine",
+    "name": "Pendentif Résine",
+    "category": "pendentif",
+    "availability": "bientot",
+    "price": null,
+    "photos": [],
+    "alts": []
+  },
+  {
+    "id": "pendentif-fleur-sechee",
+    "name": "Pendentif Fleur Séchée",
+    "category": "pendentif",
+    "availability": "bientot",
+    "price": null,
+    "photos": [],
+    "alts": []
+  },
+  {
+    "id": "bracelet-fin",
+    "name": "Bracelet Fin",
+    "category": "bracelet",
+    "availability": "bientot",
+    "price": null,
+    "photos": [],
+    "alts": []
+  },
+  {
+    "id": "bracelet-resine",
+    "name": "Bracelet Résine",
+    "category": "bracelet",
+    "availability": "bientot",
+    "price": null,
+    "photos": [],
+    "alts": []
+  },
+  {
+    "id": "bague-fleur",
+    "name": "Bague Fleur",
+    "category": "bague",
+    "availability": "bientot",
+    "price": null,
+    "photos": [],
+    "alts": []
+  },
+  {
+    "id": "bague-resine",
+    "name": "Bague Résine",
+    "category": "bague",
+    "availability": "bientot",
+    "price": null,
+    "photos": [],
+    "alts": []
+  }
+]
