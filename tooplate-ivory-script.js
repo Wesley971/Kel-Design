@@ -30,8 +30,8 @@ https://www.tooplate.com/view/2166-ivory-flow
     })
     .then(function(allProducts) {
       productSlides = allProducts
-        .filter(function(p) { return p.featured; })
-        .sort(function(a, b) { return a.featuredOrder - b.featuredOrder; });
+        .filter(function(p) { return p.featured && p.heading && p.plainName; })
+        .sort(function(a, b) { return (a.featuredOrder || Infinity) - (b.featuredOrder || Infinity); });
       initProductCarousel();
     })
     .catch(function(err) {
@@ -152,6 +152,10 @@ https://www.tooplate.com/view/2166-ivory-flow
 
   function initProductCarousel() {
     if (!productSection || !productPrevBtn || !productNextBtn || !productDotsContainer) return;
+    if (!productSlides.length) {
+      console.error('Carrousel produit : aucune pièce signature valide (featured + heading + plainName).');
+      return;
+    }
     var isTransitioning = false;
     var infoContent = productSection.querySelector('.product-info-content');
     var slideImg = productSection.querySelector('.product-main-img');
@@ -166,20 +170,20 @@ https://www.tooplate.com/view/2166-ivory-flow
 
     function renderThumbs(data) {
       thumbsEl.innerHTML = '';
-      if (data.photos.length <= 1) {
+      if (data.images.length <= 1) {
         thumbsEl.classList.remove('is-visible');
         return;
       }
       thumbsEl.classList.add('is-visible');
-      data.photos.forEach(function(src, i) {
+      data.images.forEach(function(img, i) {
         var thumb = document.createElement('button');
         thumb.className = 'product-thumb' + (i === 0 ? ' is-active' : '');
-        thumb.style.backgroundImage = 'url(' + src + ')';
+        thumb.style.backgroundImage = 'url(' + img.src + ')';
         thumb.setAttribute('aria-label', 'Voir cette photo');
         thumb.addEventListener('click', function(e) {
           e.stopPropagation();
-          slideImg.src = src;
-          slideImg.alt = data.alts[i];
+          slideImg.src = img.src;
+          slideImg.alt = img.alt;
           thumbsEl.querySelectorAll('.product-thumb').forEach(function(t) { t.classList.remove('is-active'); });
           thumb.classList.add('is-active');
         });
@@ -189,8 +193,8 @@ https://www.tooplate.com/view/2166-ivory-flow
 
     function renderSlide(index) {
       var data = productSlides[index];
-      slideImg.src = data.photos[0];
-      slideImg.alt = data.alts[0];
+      slideImg.src = data.images[0].src;
+      slideImg.alt = data.images[0].alt;
       renderThumbs(data);
       badgeEl.textContent = data.badge;
       nameEl.innerHTML = data.heading;
