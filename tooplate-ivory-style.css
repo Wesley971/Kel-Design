@@ -978,7 +978,7 @@ img { display: block; max-width: 100%; height: auto; }
    ═══════════════════════════════════════════════ */
 .video-fragment {
   background: var(--ink);
-  min-height: 100vh;
+  min-height: 46vh;
   position: relative;
   display: flex;
   align-items: center;
