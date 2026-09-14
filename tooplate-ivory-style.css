@@ -44,7 +44,7 @@ body {
   background: var(--oat);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow: visible;
 }
 
 a { color: inherit; text-decoration: none; }
