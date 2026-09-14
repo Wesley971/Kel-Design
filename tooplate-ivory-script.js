@@ -433,6 +433,19 @@ https://www.tooplate.com/view/2166-ivory-flow
     });
   });
 
+  /* ── FAQ: accordion ── */
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function(item) {
+    var trigger = item.querySelector('.faq-trigger');
+    var panel = item.querySelector('.faq-panel');
+    if (!trigger || !panel) return;
+    trigger.addEventListener('click', function() {
+      var open = item.classList.toggle('is-open');
+      trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+    });
+  });
+
   /* ── Smooth scroll for pill nav ── */
   pillLinks.forEach(function(link) {
     link.addEventListener('click', function(e) {
