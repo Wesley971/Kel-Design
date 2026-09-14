@@ -53,6 +53,13 @@ collections:
                   - { label: "Disponible", value: "disponible" }
                   - { label: "Bientôt (pas encore de photo)", value: "bientot" }
 
+              - label: "Personnalisable"
+                name: "customizable"
+                widget: "boolean"
+                required: false
+                default: false
+                hint: "Coche si cette pièce peut être personnalisée (couleur, etc.). Affiche un badge \"Personnalisable\" sur le site une fois le lookbook connecté à ce catalogue."
+
               - label: "Type de prix"
                 name: "priceType"
                 widget: "select"
