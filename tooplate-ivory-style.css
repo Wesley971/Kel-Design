@@ -978,7 +978,6 @@ img { display: block; max-width: 100%; height: auto; }
    ═══════════════════════════════════════════════ */
 .video-fragment {
   background: var(--ink);
-  min-height: 46vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -1067,7 +1066,6 @@ img { display: block; max-width: 100%; height: auto; }
    ═══════════════════════════════════════════════ */
 .reviews {
   background: var(--oat);
-  min-height: 46vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1107,7 +1105,6 @@ img { display: block; max-width: 100%; height: auto; }
    ═══════════════════════════════════════════════ */
 .faq {
   background: var(--oat);
-  min-height: 0;
   display: flex;
   align-items: center;
   padding: 100px 64px;
