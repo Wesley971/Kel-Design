@@ -6,8 +6,8 @@
     "availability": "disponible",
     "customizable": false,
     "priceType": "fixe",
-    "price": 50,
-    "priceConfirmed": false,
+    "price": 5,
+    "priceConfirmed": true,
     "images": [
       {
         "src": "images/boucles-herbier-jaune-velours.jpg",
@@ -138,13 +138,13 @@
     "specs": ""
   },
   {
-    "id": "goutte-doree-malachite",
-    "name": "Goutte Dorée Malachite",
+    "id": "bo-015",
+    "name": "Boucles d'oreilles Simply",
     "category": "boucles-oreilles",
     "availability": "disponible",
     "customizable": false,
     "priceType": "fixe",
-    "price": 14,
+    "price": 7,
     "priceConfirmed": false,
     "images": [
       {
@@ -284,35 +284,7 @@
     "priceType": "fixe",
     "price": 24,
     "priceConfirmed": true,
-    "images": [
-      {
-        "src": "images/boucles-violette-fleurs.jpg",
-        "alt": "Boucles d'oreilles violettes avec breloque fleurie"
-      }
-    ],
-    "featured": false,
-    "featuredOrder": null,
-    "heading": "",
-    "plainName": "",
-    "badge": "Pièce Signature",
-    "desc": "",
-    "specs": ""
-  },
-  {
-    "id": "feuille-rose",
-    "name": "Feuille Rose",
-    "category": "boucles-oreilles",
-    "availability": "disponible",
-    "customizable": false,
-    "priceType": "fixe",
-    "price": 22,
-    "priceConfirmed": true,
-    "images": [
-      {
-        "src": "images/boucles-feuille-rose.jpg",
-        "alt": "Boucles d'oreilles feuille rose en résine"
-      }
-    ],
+    "images": [],
     "featured": false,
     "featuredOrder": null,
     "heading": "",
@@ -349,174 +321,24 @@
     "specs": "Résine et fleurs séchées, fixation en suédine — pièce réalisée sur commande, fabriquée en France."
   },
   {
-    "id": "or-corail",
-    "name": "Or Corail",
+    "id": "bo-030",
+    "name": "Boucles d'oreilles Jatina",
     "category": "boucles-oreilles",
     "availability": "disponible",
     "customizable": false,
     "priceType": "fixe",
-    "price": 24,
+    "price": 5,
     "priceConfirmed": true,
     "images": [
       {
-        "src": "images/boucles-or-corail.jpg",
-        "alt": "Boucles d'oreilles or et corail"
-      }
-    ],
-    "featured": false,
-    "featuredOrder": null,
-    "heading": "",
-    "plainName": "",
-    "badge": "Pièce Signature",
-    "desc": "",
-    "specs": ""
-  },
-  {
-    "id": "vert-rose",
-    "name": "Vert & Rose",
-    "category": "boucles-oreilles",
-    "availability": "disponible",
-    "customizable": false,
-    "priceType": "fixe",
-    "price": 22,
-    "priceConfirmed": true,
-    "images": [
+        "src": "/images/1000173399.png",
+        "alt": "Boucles d'oreilles résine, bijoux artisanaux, éclats séchées, doré, unique, tendance, léger."
+      },
       {
-        "src": "images/boucles-vert-rose.jpg",
-        "alt": "Boucles d'oreilles vert et rose"
+        "src": "/images/1000173409.png",
+        "alt": "Boucles d'oreilles résine, bijoux artisanaux, éclats séchés, doré, unique, tendance, léger."
       }
     ],
-    "featured": false,
-    "featuredOrder": null,
-    "heading": "",
-    "plainName": "",
-    "badge": "Pièce Signature",
-    "desc": "",
-    "specs": ""
-  },
-  {
-    "id": "blanc-vert",
-    "name": "Blanc & Vert",
-    "category": "boucles-oreilles",
-    "availability": "disponible",
-    "customizable": false,
-    "priceType": "fixe",
-    "price": 22,
-    "priceConfirmed": true,
-    "images": [
-      {
-        "src": "images/boucles-blanc-vert.jpg",
-        "alt": "Boucles d'oreilles blanc et vert, éclats dorés"
-      }
-    ],
-    "featured": false,
-    "featuredOrder": null,
-    "heading": "",
-    "plainName": "",
-    "badge": "Pièce Signature",
-    "desc": "",
-    "specs": ""
-  },
-  {
-    "id": "pendentif-resine",
-    "name": "Pendentif Résine",
-    "category": "pendentif",
-    "availability": "bientot",
-    "customizable": false,
-    "priceType": "fixe",
-    "price": null,
-    "priceConfirmed": true,
-    "images": [],
-    "featured": false,
-    "featuredOrder": null,
-    "heading": "",
-    "plainName": "",
-    "badge": "Pièce Signature",
-    "desc": "",
-    "specs": ""
-  },
-  {
-    "id": "pendentif-fleur-sechee",
-    "name": "Pendentif Fleur Séchée",
-    "category": "pendentif",
-    "availability": "bientot",
-    "customizable": false,
-    "priceType": "fixe",
-    "price": null,
-    "priceConfirmed": true,
-    "images": [],
-    "featured": false,
-    "featuredOrder": null,
-    "heading": "",
-    "plainName": "",
-    "badge": "Pièce Signature",
-    "desc": "",
-    "specs": ""
-  },
-  {
-    "id": "bracelet-fin",
-    "name": "Bracelet Fin",
-    "category": "bracelet",
-    "availability": "bientot",
-    "customizable": false,
-    "priceType": "fixe",
-    "price": null,
-    "priceConfirmed": true,
-    "images": [],
-    "featured": false,
-    "featuredOrder": null,
-    "heading": "",
-    "plainName": "",
-    "badge": "Pièce Signature",
-    "desc": "",
-    "specs": ""
-  },
-  {
-    "id": "bracelet-resine",
-    "name": "Bracelet Résine",
-    "category": "bracelet",
-    "availability": "bientot",
-    "customizable": false,
-    "priceType": "fixe",
-    "price": null,
-    "priceConfirmed": true,
-    "images": [],
-    "featured": false,
-    "featuredOrder": null,
-    "heading": "",
-    "plainName": "",
-    "badge": "Pièce Signature",
-    "desc": "",
-    "specs": ""
-  },
-  {
-    "id": "bague-fleur",
-    "name": "Bague Fleur",
-    "category": "bague",
-    "availability": "bientot",
-    "customizable": false,
-    "priceType": "fixe",
-    "price": null,
-    "priceConfirmed": true,
-    "images": [],
-    "featured": false,
-    "featuredOrder": null,
-    "heading": "",
-    "plainName": "",
-    "badge": "Pièce Signature",
-    "desc": "",
-    "specs": ""
-  },
-  {
-    "id": "bague-resine",
-    "name": "Bague Résine",
-    "category": "bague",
-    "availability": "bientot",
-    "customizable": false,
-    "priceType": "fixe",
-    "price": null,
-    "priceConfirmed": true,
-    "images": [],
     "featured": false,
     "featuredOrder": null,
     "heading": "",
