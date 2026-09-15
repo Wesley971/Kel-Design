@@ -1360,6 +1360,16 @@ img { display: block; max-width: 100%; height: auto; }
 
 .mobile-nav.open { display: flex; }
 
+/* Sortir <body> du flux réduit le document à la fenêtre : plus rien à faire
+   défiler, y compris sur iOS Safari qui ignore overflow: hidden au toucher.
+   Le décalage `top` est posé en JS pour conserver la position visuelle. */
+body.is-scroll-locked {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
 .mobile-nav a {
   font-family: 'Fraunces', serif;
   font-optical-sizing: auto;

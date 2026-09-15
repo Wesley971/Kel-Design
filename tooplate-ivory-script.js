@@ -418,19 +418,38 @@ https://www.tooplate.com/view/2166-ivory-flow
   var hamburger = document.querySelector('.hamburger');
   var mobileNav = document.querySelector('.mobile-nav');
   var mobileLinks = document.querySelectorAll('.mobile-nav a');
+  var lockedScrollY = 0;
+
+  function lockScroll() {
+    lockedScrollY = window.scrollY;
+    document.body.style.top = -lockedScrollY + 'px';
+    document.body.classList.add('is-scroll-locked');
+  }
+
+  function unlockScroll() {
+    document.body.classList.remove('is-scroll-locked');
+    document.body.style.top = '';
+    // html est en scroll-behavior: smooth — la restauration ne doit pas être animée
+    document.documentElement.style.scrollBehavior = 'auto';
+    window.scrollTo(0, lockedScrollY);
+    document.documentElement.style.scrollBehavior = '';
+  }
+
+  function closeMobileNav() {
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+    unlockScroll();
+  }
 
   hamburger.addEventListener('click', function() {
-    hamburger.classList.toggle('open');
-    mobileNav.classList.toggle('open');
-    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    var opening = !mobileNav.classList.contains('open');
+    hamburger.classList.toggle('open', opening);
+    mobileNav.classList.toggle('open', opening);
+    if (opening) lockScroll(); else unlockScroll();
   });
 
   mobileLinks.forEach(function(link) {
-    link.addEventListener('click', function() {
-      hamburger.classList.remove('open');
-      mobileNav.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+    link.addEventListener('click', closeMobileNav);
   });
 
   /* ── FAQ: accordion ── */
