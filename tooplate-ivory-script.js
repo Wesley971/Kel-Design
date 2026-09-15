@@ -32,6 +32,8 @@ https://www.tooplate.com/view/2166-ivory-flow
   var lockedScrollY = 0;
 
   function lockScroll() {
+    // déjà verrouillé : scrollY vaut 0 (document réduit), le relire écraserait la position mémorisée
+    if (document.body.classList.contains('is-scroll-locked')) return;
     lockedScrollY = window.scrollY;
     document.body.style.top = -lockedScrollY + 'px';
     document.body.classList.add('is-scroll-locked');
