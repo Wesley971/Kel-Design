@@ -377,7 +377,12 @@ img { display: block; max-width: 100%; height: auto; }
   backdrop-filter: blur(8px);
   padding: 6px 14px;
   user-select: none;
-  transition: background 0.3s var(--ease-soft);
+  transition: background 0.3s var(--ease-soft), transform 1s var(--ease-soft);
+}
+
+/* Suit la photo, qui monte de 4px au survol de la carte */
+.lookbook-card:hover .lookbook-card-badge {
+  transform: translateY(-4px);
 }
 
 .lookbook-card-badge:hover {

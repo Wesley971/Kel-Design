@@ -36,7 +36,7 @@
   // Le champ est un texte libre saisi dans le CMS ; l'espace insécable évite un
   // retour à la ligne entre « Dimensions » et les deux-points
   function formatDimensions(dimensions) {
-    return dimensions ? 'Dimensions : ' + dimensions : '';
+    return dimensions ? 'Dimensions\u00a0: ' + dimensions : '';
   }
 
   /* ── Rendu du lookbook (HTML généré au déploiement par build.js) ── */
@@ -101,7 +101,7 @@
     ];
     if (product.customizable === true) {
       // draggable="false" : un <a> posé sur la photo ne doit pas déclencher le drag natif du lien
-      lines.push(indent + '  <a href="' + escapeHtml(buildCustomizationLink(product.name)) + '" class="lookbook-card-badge" target="_blank" rel="noopener noreferrer" draggable="false" aria-label="Demander une personnalisation de ' + name + ' sur WhatsApp">Personnalisable</a>');
+      lines.push(indent + '  <a href="' + escapeHtml(buildCustomizationLink(product.name)) + '" class="lookbook-card-badge" target="_blank" rel="noopener noreferrer" draggable="false" aria-label="Demander une personnalisation pour ' + name + ' sur WhatsApp">Personnalisable</a>');
     }
     lines.push(
       label,
