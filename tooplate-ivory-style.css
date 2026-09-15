@@ -175,16 +175,6 @@ img { display: block; max-width: 100%; height: auto; }
 .cta-link--light { color: var(--oat); }
 .cta-link--light::after { background: var(--oat); }
 
-.cta-link--disabled {
-  opacity: 0.5;
-  cursor: default;
-}
-
-.cta-link--disabled:hover::after {
-  width: 0;
-  left: 0;
-}
-
 /* ═══════════════════════════════════════════════
    SECTION LAYOUT (scroll classique)
    ═══════════════════════════════════════════════ */
