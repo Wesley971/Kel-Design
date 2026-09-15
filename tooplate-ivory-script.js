@@ -19,14 +19,9 @@ https://www.tooplate.com/view/2166-ivory-flow
 
   var openLightbox;
 
-  function buildWhatsAppLink(pieceName) {
-    return 'https://wa.me/33768728002?text=' + encodeURIComponent('Bonjour, je suis intéressée par : ' + pieceName);
-  }
-
-  function formatPrice(product) {
-    if (product.priceType === 'devis') return 'Sur devis';
-    return typeof product.price === 'number' ? product.price + '€' : '';
-  }
+  /* Helpers de présentation partagés avec le build (catalog.js, chargé avant ce script) */
+  var buildWhatsAppLink = window.KelCatalog.buildWhatsAppLink;
+  var formatPrice = window.KelCatalog.formatPrice;
 
   /* ── Verrou de scroll de la page — partagé par les overlays plein écran ── */
   var lockedScrollY = 0;
