@@ -414,11 +414,15 @@ https://www.tooplate.com/view/2166-ivory-flow
       lightboxImg.alt = alt;
       lightbox.classList.add('is-open');
       lightbox.setAttribute('aria-hidden', 'false');
+      lockScroll();
     };
 
     function closeLightbox() {
+      // le bouton × reste focusable au clavier lightbox fermée (opacity: 0, pas display: none)
+      if (!lightbox.classList.contains('is-open')) return;
       lightbox.classList.remove('is-open');
       lightbox.setAttribute('aria-hidden', 'true');
+      unlockScroll();
     }
 
     lightboxClose.addEventListener('click', closeLightbox);
@@ -428,7 +432,7 @@ https://www.tooplate.com/view/2166-ivory-flow
     });
 
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+      if (e.key === 'Escape') closeLightbox();
     });
   }
 
