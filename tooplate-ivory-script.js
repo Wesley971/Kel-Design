@@ -28,6 +28,24 @@ https://www.tooplate.com/view/2166-ivory-flow
     return typeof product.price === 'number' ? product.price + '€' : '';
   }
 
+  /* ── Verrou de scroll de la page — partagé par les overlays plein écran ── */
+  var lockedScrollY = 0;
+
+  function lockScroll() {
+    lockedScrollY = window.scrollY;
+    document.body.style.top = -lockedScrollY + 'px';
+    document.body.classList.add('is-scroll-locked');
+  }
+
+  function unlockScroll() {
+    document.body.classList.remove('is-scroll-locked');
+    document.body.style.top = '';
+    // html est en scroll-behavior: smooth — la restauration ne doit pas être animée
+    document.documentElement.style.scrollBehavior = 'auto';
+    window.scrollTo(0, lockedScrollY);
+    document.documentElement.style.scrollBehavior = '';
+  }
+
   fetch('data/products.json')
     .then(function(res) {
       if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -418,22 +436,6 @@ https://www.tooplate.com/view/2166-ivory-flow
   var hamburger = document.querySelector('.hamburger');
   var mobileNav = document.querySelector('.mobile-nav');
   var mobileLinks = document.querySelectorAll('.mobile-nav a');
-  var lockedScrollY = 0;
-
-  function lockScroll() {
-    lockedScrollY = window.scrollY;
-    document.body.style.top = -lockedScrollY + 'px';
-    document.body.classList.add('is-scroll-locked');
-  }
-
-  function unlockScroll() {
-    document.body.classList.remove('is-scroll-locked');
-    document.body.style.top = '';
-    // html est en scroll-behavior: smooth — la restauration ne doit pas être animée
-    document.documentElement.style.scrollBehavior = 'auto';
-    window.scrollTo(0, lockedScrollY);
-    document.documentElement.style.scrollBehavior = '';
-  }
 
   function closeMobileNav() {
     hamburger.classList.remove('open');
