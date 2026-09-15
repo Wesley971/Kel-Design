@@ -653,6 +653,16 @@ img { display: block; max-width: 100%; height: auto; }
   margin-bottom: 32px;
 }
 
+/* Dimensions saisies dans le CMS ; l'élément reste `hidden` tant que la pièce n'en a pas */
+.product-dimensions {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+  margin-top: -16px;
+  margin-bottom: 32px;
+}
+
 .product-specs {
   font-size: 14px;
   font-weight: 500;

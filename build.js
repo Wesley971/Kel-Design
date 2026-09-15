@@ -95,7 +95,7 @@ function readProducts() {
     }
 
     // Champs texte optionnels : absents, null ou chaîne — tout autre type est une erreur de saisie
-    ['desc'].forEach(function(field) {
+    ['desc', 'dimensions'].forEach(function(field) {
       if (product[field] !== undefined && product[field] !== null && typeof product[field] !== 'string') {
         fail(where + ' : « ' + field + ' » doit être un texte');
       }

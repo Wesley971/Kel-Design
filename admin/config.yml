@@ -60,6 +60,12 @@ collections:
                 default: false
                 hint: "Coche si cette pièce peut être personnalisée (couleur, etc.). Un badge \"Personnalisable\" apparaît sur sa carte dans la collection ; en cliquant dessus, la cliente ouvre WhatsApp avec une demande de personnalisation pré-remplie."
 
+              - label: "Dimensions"
+                name: "dimensions"
+                widget: "string"
+                required: false
+                hint: "Texte libre, ex. \"4 cm × 2 cm\" ou \"environ 5 cm de long\". Le site affiche \"Dimensions :\" devant. Laisser vide si inconnu."
+
               - label: "Description (une ou deux phrases)"
                 name: "desc"
                 widget: "text"

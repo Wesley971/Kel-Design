@@ -22,6 +22,7 @@ https://www.tooplate.com/view/2166-ivory-flow
   /* Helpers de présentation partagés avec le build (catalog.js, chargé avant ce script) */
   var buildWhatsAppLink = window.KelCatalog.buildWhatsAppLink;
   var formatPrice = window.KelCatalog.formatPrice;
+  var formatDimensions = window.KelCatalog.formatDimensions;
 
   /* ── Verrou de scroll de la page — partagé par les overlays plein écran ── */
   var lockedScrollY = 0;
@@ -184,6 +185,7 @@ https://www.tooplate.com/view/2166-ivory-flow
     var nameEl = productSection.querySelector('.product-name');
     var priceEl = productSection.querySelector('.product-price');
     var descEl = productSection.querySelector('.product-desc');
+    var dimensionsEl = productSection.querySelector('.product-dimensions');
     var specsEl = productSection.querySelector('.product-specs');
     var productCta = productSection.querySelector('#productCta');
     var productDots;
@@ -220,6 +222,8 @@ https://www.tooplate.com/view/2166-ivory-flow
       nameEl.innerHTML = data.heading;
       priceEl.textContent = formatPrice(data);
       descEl.textContent = data.desc;
+      dimensionsEl.textContent = formatDimensions(data.dimensions);
+      dimensionsEl.hidden = !data.dimensions;
       specsEl.innerHTML = data.specs;
       productCta.href = buildWhatsAppLink(data.plainName);
       productDots.forEach(function(dot, i) {
@@ -430,7 +434,7 @@ https://www.tooplate.com/view/2166-ivory-flow
       lightboxImg.src = src;
       lightboxImg.alt = alt;
       captionName.textContent = hasCaption ? (details.name || '') : '';
-      captionDimensions.textContent = hasCaption ? (details.dimensions || '') : '';
+      captionDimensions.textContent = hasCaption ? formatDimensions(details.dimensions) : '';
       captionDesc.textContent = hasCaption ? (details.desc || '') : '';
       lightboxCaption.hidden = !hasCaption;
       lightbox.classList.toggle('has-caption', hasCaption);

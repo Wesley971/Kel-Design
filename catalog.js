@@ -33,6 +33,12 @@
     return typeof product.price === 'number' ? product.price + '€' : '';
   }
 
+  // Le champ est un texte libre saisi dans le CMS ; l'espace insécable évite un
+  // retour à la ligne entre « Dimensions » et les deux-points
+  function formatDimensions(dimensions) {
+    return dimensions ? 'Dimensions : ' + dimensions : '';
+  }
+
   /* ── Rendu du lookbook (HTML généré au déploiement par build.js) ── */
 
   function escapeHtml(value) {
@@ -88,6 +94,7 @@
     // Détails lus par la lightbox (légende sous la photo agrandie) ; absents si vides
     var details = '';
     if (product.desc) details += ' data-desc="' + escapeHtml(product.desc) + '"';
+    if (product.dimensions) details += ' data-dimensions="' + escapeHtml(product.dimensions) + '"';
     var lines = [
       indent + '<div class="lookbook-card" data-piece-name="' + name + '"' + details + '>',
       indent + '  <img src="' + escapeHtml(normalizeImagePath(image.src)) + '" alt="' + escapeHtml(image.alt) + '" loading="lazy">'
@@ -119,6 +126,7 @@
     buildWhatsAppLink: buildWhatsAppLink,
     buildCustomizationLink: buildCustomizationLink,
     formatPrice: formatPrice,
+    formatDimensions: formatDimensions,
     escapeHtml: escapeHtml,
     normalizeImagePath: normalizeImagePath,
     isComingSoon: isComingSoon,
