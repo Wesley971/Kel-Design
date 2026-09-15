@@ -20,18 +20,20 @@ HTML du lookbook est régénéré à chaque déploiement depuis `data/products.j
 ## Déploiement — Cloudflare Pages
 
 Réglages du projet dans le dashboard Cloudflare (ils ne sont **pas** versionnés — ce tableau est
-la référence si le projet doit être recréé) :
+la référence si le projet doit être recréé ; état vérifié le 15/09/2026, page *Settings* du
+projet, bloc **Build**) :
 
 | Réglage | Valeur |
 |---|---|
 | Projet | `kel-empreinte` — https://kel-empreinte.pages.dev |
-| Dépôt Git | `Wesley971/Kel-Empreinte`, branche de production `master`, déploiements automatiques |
+| Dépôt Git | `Wesley971/Kel-Empreinte`, production branch `master`, automatic deployments : enabled |
 | Build command | `node build.js` |
 | Build output directory | vide (= racine du dépôt : rien n'est copié, `index.html` est réécrit en place) |
 | Root directory | vide |
-| Build system | version 3 ; Node lu dans `.node-version` |
-| Preview deployments | toutes les branches hors production (même build command) |
-| Notification | *Notifications › Pages › Project updates* : projet `kel-empreinte`, environnements Production + Preview, événement **Deployment failed**, e-mail au mainteneur |
+| Build system version | 3 ; Node lu dans `.node-version` (22.16.0 détecté au build) |
+| Build cache / watch paths | disabled / `*` (valeurs par défaut) |
+| Previews | chaque push d'une branche hors `master` déploie une preview `<branche>.kel-empreinte.pages.dev` avec la même build command (réglage non affiché dans l'interface actuelle, comportement vérifié) |
+| Notification | compte › *Notifications* › **Pages › Project updates**, nommée « Kel'Empreinte - échec de déploiement » : projet `kel-empreinte`, environnements Production + Preview, événement **Deployment failed** seul, e-mail au mainteneur |
 
 Chaque push sur `master` — y compris chaque enregistrement dans `/admin` — déclenche un build puis
 un déploiement (~1 à 2 min). Un build en échec **laisse le dernier déploiement en ligne** et envoie
