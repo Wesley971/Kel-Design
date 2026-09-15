@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Wesley971/Kel-Design
+  repo: Wesley971/Kel-Empreinte
   branch: master
   base_url: "https://sveltia-cms-auth.abdoulwes.workers.dev"
 
