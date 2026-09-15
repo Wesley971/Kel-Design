@@ -386,7 +386,11 @@ https://www.tooplate.com/view/2166-ivory-flow
         card.addEventListener('click', function(e) {
           if (e.target !== card && e.target !== img) return;
           if (dragDistance > 5 || !openLightbox) return;
-          openLightbox(img.src, img.alt);
+          openLightbox(img.src, img.alt, {
+            name: card.getAttribute('data-piece-name'),
+            desc: card.getAttribute('data-desc'),
+            dimensions: card.getAttribute('data-dimensions')
+          });
         });
       }
 
@@ -413,10 +417,23 @@ https://www.tooplate.com/view/2166-ivory-flow
   if (lightbox) {
     var lightboxImg = lightbox.querySelector('.lightbox-img');
     var lightboxClose = lightbox.querySelector('.lightbox-close');
+    var lightboxCaption = lightbox.querySelector('.lightbox-caption');
+    var captionName = lightbox.querySelector('.lightbox-caption-name');
+    var captionDimensions = lightbox.querySelector('.lightbox-caption-dimensions');
+    var captionDesc = lightbox.querySelector('.lightbox-caption-desc');
 
-    openLightbox = function(src, alt) {
+    // details : { name, desc, dimensions } lus sur la carte ; la légende n'apparaît
+    // que si la pièce a une description ou des dimensions (textContent : jamais de HTML)
+    openLightbox = function(src, alt, details) {
+      details = details || {};
+      var hasCaption = !!(details.desc || details.dimensions);
       lightboxImg.src = src;
       lightboxImg.alt = alt;
+      captionName.textContent = hasCaption ? (details.name || '') : '';
+      captionDimensions.textContent = hasCaption ? (details.dimensions || '') : '';
+      captionDesc.textContent = hasCaption ? (details.desc || '') : '';
+      lightboxCaption.hidden = !hasCaption;
+      lightbox.classList.toggle('has-caption', hasCaption);
       lightbox.classList.add('is-open');
       lightbox.setAttribute('aria-hidden', 'false');
       lockScroll();

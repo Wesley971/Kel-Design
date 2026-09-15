@@ -61,7 +61,15 @@
 <!-- ═══════ LOOKBOOK LIGHTBOX ═══════ -->
 <div class="lightbox" id="lightbox" aria-hidden="true">
   <button class="lightbox-close" aria-label="Fermer">&times;</button>
-  <img class="lightbox-img" alt="">
+  <figure class="lightbox-figure">
+    <img class="lightbox-img" alt="">
+    <!-- Légende remplie par le script depuis les data-* de la carte ; masquée si la pièce n'a ni description ni dimensions -->
+    <figcaption class="lightbox-caption" hidden>
+      <span class="lightbox-caption-name"></span>
+      <span class="lightbox-caption-dimensions"></span>
+      <p class="lightbox-caption-desc"></p>
+    </figcaption>
+  </figure>
 </div>
 
 <!-- ═══════ THE CANVAS ═══════ -->
@@ -95,13 +103,13 @@
     </div>
     <div class="lookbook-track">
       <!-- build:lookbook-cards:start — généré par build.js depuis data/products.json, toute modification manuelle ici est écrasée au déploiement -->
-      <div class="lookbook-card" data-piece-name="Herbier Jaune Velours">
+      <div class="lookbook-card" data-piece-name="Herbier Jaune Velours" data-desc="Un assemblage de fleurs séchées jaunes prises dans la résine, à la forme organique et aux éclats dorés. Façonnées à la main dans mon atelier.">
         <img src="images/boucles-herbier-jaune-velours.jpg" alt="Boucles d'oreilles herbier jaune sur fond bleu nuit" loading="lazy">
         <span class="lookbook-card-label">No. 01 — Herbier Jaune Velours</span>
         <span class="lookbook-card-price">50€</span>
         <a href="https://wa.me/33768728002?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9e%20par%20%3A%20Herbier%20Jaune%20Velours" class="lookbook-card-cta cta-link" target="_blank" rel="noopener noreferrer">Commander</a>
       </div>
-      <div class="lookbook-card" data-piece-name="Transparente Cuivre &amp; Bordeaux">
+      <div class="lookbook-card" data-piece-name="Transparente Cuivre &amp; Bordeaux" data-desc="Une composition transparente à éclats cuivrés, prolongée d'une perle bordeaux. Résine façonnée à la main dans mon atelier.">
         <img src="images/boucles-transparente-cuivre-bordeaux.jpg" alt="Boucles d'oreilles transparentes à éclats cuivrés et perle bordeaux" loading="lazy">
         <span class="lookbook-card-label">No. 02 — Transparente Cuivre &amp; Bordeaux</span>
         <span class="lookbook-card-price">17€</span>
@@ -179,7 +187,7 @@
         <span class="lookbook-card-price">22€</span>
         <a href="https://wa.me/33768728002?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9e%20par%20%3A%20Feuille%20Rose" class="lookbook-card-cta cta-link" target="_blank" rel="noopener noreferrer">Commander</a>
       </div>
-      <div class="lookbook-card" data-piece-name="Nœud Automne">
+      <div class="lookbook-card" data-piece-name="Nœud Automne" data-desc="Composé de fleurs séchées prises dans la résine et rehaussé d'éclats dorés. Fixation en suédine, façonné à la main dans mon atelier.">
         <img src="images/noeud-automne-1.jpg" alt="Nœud papillon Automne, pièce signature Kel'Empreinte" loading="lazy">
         <span class="lookbook-card-label">No. 15 — Nœud Automne</span>
         <span class="lookbook-card-price">Sur devis</span>

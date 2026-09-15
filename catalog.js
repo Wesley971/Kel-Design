@@ -85,8 +85,11 @@
     }
 
     var image = product.images[0];
+    // Détails lus par la lightbox (légende sous la photo agrandie) ; absents si vides
+    var details = '';
+    if (product.desc) details += ' data-desc="' + escapeHtml(product.desc) + '"';
     var lines = [
-      indent + '<div class="lookbook-card" data-piece-name="' + name + '">',
+      indent + '<div class="lookbook-card" data-piece-name="' + name + '"' + details + '>',
       indent + '  <img src="' + escapeHtml(normalizeImagePath(image.src)) + '" alt="' + escapeHtml(image.alt) + '" loading="lazy">'
     ];
     if (product.customizable === true) {

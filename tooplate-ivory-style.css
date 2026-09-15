@@ -1416,11 +1416,63 @@ body.is-scroll-locked {
   pointer-events: auto;
 }
 
+.lightbox-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin: 0;
+  max-width: 90vw;
+}
+
 .lightbox-img {
   max-width: 90vw;
   max-height: 85vh;
   border-radius: 16px;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+}
+
+/* Avec une légende, la photo cède un peu de hauteur ; sans légende, rien ne change */
+.lightbox.has-caption .lightbox-img {
+  max-height: 62vh;
+}
+
+.lightbox-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  max-width: 520px;
+  text-align: center;
+  font-family: 'EB Garamond', serif;
+  color: var(--oat);
+}
+
+.lightbox-caption-name {
+  font-size: 15px;
+  font-style: italic;
+}
+
+.lightbox-caption-dimensions {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--amber);
+}
+
+.lightbox-caption-dimensions:empty {
+  display: none;
+}
+
+.lightbox-caption-desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 300;
+  opacity: 0.85;
+}
+
+.lightbox-caption-desc:empty {
+  display: none;
 }
 
 .lightbox-close {

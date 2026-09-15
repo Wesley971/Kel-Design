@@ -60,6 +60,13 @@ collections:
                 default: false
                 hint: "Coche si cette pièce peut être personnalisée (couleur, etc.). Un badge \"Personnalisable\" apparaît sur sa carte dans la collection ; en cliquant dessus, la cliente ouvre WhatsApp avec une demande de personnalisation pré-remplie."
 
+              - label: "Description (une ou deux phrases)"
+                name: "desc"
+                widget: "text"
+                required: false
+                pattern: ["^[\\s\\S]{0,240}$", "240 caractères maximum"]
+                hint: "Matière et geste artisanal, ex. \"fleurs séchées et éclats d'or, coulés à la main\". Affichée sous la photo agrandie dans la collection, et dans le carrousel d'accueil pour les pièces mises en avant."
+
               - label: "Type de prix"
                 name: "priceType"
                 widget: "select"
@@ -127,12 +134,6 @@ collections:
                 widget: "string"
                 required: false
                 default: "Pièce Signature"
-                hint: "Uniquement si \"Mettre en avant\" est coché."
-
-              - label: "Description longue"
-                name: "desc"
-                widget: "text"
-                required: false
                 hint: "Uniquement si \"Mettre en avant\" est coché."
 
               - label: "Fiche technique (une phrase)"

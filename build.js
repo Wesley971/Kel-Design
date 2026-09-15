@@ -94,6 +94,13 @@ function readProducts() {
       if (typeof product.price !== 'number' || !(product.price >= 0)) fail(where + ' : pièce disponible à prix fixe sans prix');
     }
 
+    // Champs texte optionnels : absents, null ou chaîne — tout autre type est une erreur de saisie
+    ['desc'].forEach(function(field) {
+      if (product[field] !== undefined && product[field] !== null && typeof product[field] !== 'string') {
+        fail(where + ' : « ' + field + ' » doit être un texte');
+      }
+    });
+
     if (product.images !== undefined && !Array.isArray(product.images)) fail(where + ' : « images » doit être une liste');
     (product.images || []).forEach(function(image, i) {
       var imgWhere = where + ', photo n° ' + (i + 1);
