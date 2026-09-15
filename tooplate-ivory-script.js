@@ -397,6 +397,14 @@ https://www.tooplate.com/view/2166-ivory-flow
           if (dragDistance > 5) e.preventDefault();
         });
       }
+
+      // Badge « Personnalisable » : href déjà posé au build, seule la garde anti-drag est partagée
+      var badge = card.querySelector('.lookbook-card-badge');
+      if (badge) {
+        badge.addEventListener('click', function(e) {
+          if (dragDistance > 5) e.preventDefault();
+        });
+      }
     });
   }
 

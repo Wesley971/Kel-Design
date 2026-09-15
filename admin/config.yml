@@ -58,7 +58,7 @@ collections:
                 widget: "boolean"
                 required: false
                 default: false
-                hint: "Coche si cette pièce peut être personnalisée (couleur, etc.). Affiche un badge \"Personnalisable\" sur le site une fois le lookbook connecté à ce catalogue."
+                hint: "Coche si cette pièce peut être personnalisée (couleur, etc.). Un badge \"Personnalisable\" apparaît sur sa carte dans la collection ; en cliquant dessus, la cliente ouvre WhatsApp avec une demande de personnalisation pré-remplie."
 
               - label: "Type de prix"
                 name: "priceType"

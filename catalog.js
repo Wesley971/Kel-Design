@@ -14,8 +14,18 @@
 }(this, function() {
   'use strict';
 
+  function whatsAppUrl(message) {
+    return 'https://wa.me/33768728002?text=' + encodeURIComponent(message);
+  }
+
   function buildWhatsAppLink(pieceName) {
-    return 'https://wa.me/33768728002?text=' + encodeURIComponent('Bonjour, je suis intéressée par : ' + pieceName);
+    return whatsAppUrl('Bonjour, je suis intéressée par : ' + pieceName);
+  }
+
+  // Demande de personnalisation : message volontairement générique (couleur ou
+  // autre, la marque ne détaille pas les options) et neutre en genre.
+  function buildCustomizationLink(pieceName) {
+    return whatsAppUrl('Bonjour, j\'aimerais personnaliser cette pièce : ' + pieceName + '. Est-ce possible ?');
   }
 
   function formatPrice(product) {
@@ -75,14 +85,21 @@
     }
 
     var image = product.images[0];
-    return [
+    var lines = [
       indent + '<div class="lookbook-card" data-piece-name="' + name + '">',
-      indent + '  <img src="' + escapeHtml(normalizeImagePath(image.src)) + '" alt="' + escapeHtml(image.alt) + '" loading="lazy">',
+      indent + '  <img src="' + escapeHtml(normalizeImagePath(image.src)) + '" alt="' + escapeHtml(image.alt) + '" loading="lazy">'
+    ];
+    if (product.customizable === true) {
+      // draggable="false" : un <a> posé sur la photo ne doit pas déclencher le drag natif du lien
+      lines.push(indent + '  <a href="' + escapeHtml(buildCustomizationLink(product.name)) + '" class="lookbook-card-badge" target="_blank" rel="noopener noreferrer" draggable="false" aria-label="Demander une personnalisation de ' + name + ' sur WhatsApp">Personnalisable</a>');
+    }
+    lines.push(
       label,
       indent + '  <span class="lookbook-card-price">' + escapeHtml(formatPrice(product)) + '</span>',
       indent + '  <a href="' + escapeHtml(buildWhatsAppLink(product.name)) + '" class="lookbook-card-cta cta-link" target="_blank" rel="noopener noreferrer">Commander</a>',
       indent + '</div>'
-    ].join('\n');
+    );
+    return lines.join('\n');
   }
 
   function renderLookbookCards(products, indent) {
@@ -97,6 +114,7 @@
 
   return {
     buildWhatsAppLink: buildWhatsAppLink,
+    buildCustomizationLink: buildCustomizationLink,
     formatPrice: formatPrice,
     escapeHtml: escapeHtml,
     normalizeImagePath: normalizeImagePath,

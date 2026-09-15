@@ -361,6 +361,29 @@ img { display: block; max-width: 100%; height: auto; }
   box-shadow: 0 16px 56px rgba(26, 23, 20, 0.1);
 }
 
+/* Badge « Personnalisable » (pièces cochées dans le CMS) : pastille posée sur la
+   photo, même famille que le tag du hero ; c'est un lien WhatsApp, pas un décor */
+.lookbook-card-badge {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  z-index: 1;
+  font-family: 'EB Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: rgba(26, 23, 20, 0.35);
+  backdrop-filter: blur(8px);
+  padding: 6px 14px;
+  user-select: none;
+  transition: background 0.3s var(--ease-soft);
+}
+
+.lookbook-card-badge:hover {
+  background: rgba(26, 23, 20, 0.55);
+}
+
 .lookbook-card-label {
   position: absolute;
   bottom: -28px;
@@ -1469,6 +1492,7 @@ body.is-scroll-locked {
   .lookbook-track { padding: 0 24px 100px; gap: 16px; }
   .lookbook-card img { height: 45vh; min-height: 260px; border-radius: 24px; border-width: 6px; }
   .lookbook-card-visual { height: 45vh; min-height: 260px; border-radius: 24px; border-width: 6px; }
+  .lookbook-card-badge { top: 18px; left: 18px; }
   .lookbook-card-price { bottom: -52px; }
   .lookbook-card-cta { bottom: -80px; right: auto; left: 10px; }
   .lookbook-footer { padding: 0 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
