@@ -34,6 +34,27 @@ function fail(message) {
 
 /* ── Lecture et validation du catalogue ── */
 
+// Windows ignore la casse des noms de fichiers, pas le Linux du build Cloudflare :
+// un `images/Logo.jpg` pour un fichier `logo.jpg` passerait en local et casserait au
+// déploiement. On exige donc le nom exact, segment par segment, quel que soit l'OS.
+function fileExistsExactCase(file) {
+  var relative = path.relative(ROOT, file);
+  if (!relative || relative.indexOf('..') === 0 || path.isAbsolute(relative)) return false;
+  var dir = ROOT;
+  var segments = relative.split(path.sep);
+  for (var i = 0; i < segments.length; i++) {
+    var entries;
+    try {
+      entries = fs.readdirSync(dir);
+    } catch (err) {
+      return false;
+    }
+    if (entries.indexOf(segments[i]) === -1) return false;
+    dir = path.join(dir, segments[i]);
+  }
+  return fs.statSync(dir).isFile();
+}
+
 function readProducts() {
   var raw;
   try {
@@ -78,8 +99,9 @@ function readProducts() {
       var imgWhere = where + ', photo n° ' + (i + 1);
       if (!image || typeof image.src !== 'string' || !image.src.trim()) fail(imgWhere + ' : chemin d\'image manquant');
       if (typeof image.alt !== 'string' || !image.alt.trim()) fail(imgWhere + ' : description (alt) manquante');
-      var file = path.join(ROOT, catalog.normalizeImagePath(image.src));
-      if (!fs.existsSync(file)) fail(imgWhere + ' : fichier introuvable — ' + image.src);
+      var relativeSrc = catalog.normalizeImagePath(image.src);
+      if (/(^|\/)\.\.(\/|$)/.test(relativeSrc) || relativeSrc.indexOf('\\') !== -1) fail(imgWhere + ' : chemin d\'image invalide — ' + image.src);
+      if (!fileExistsExactCase(path.join(ROOT, relativeSrc))) fail(imgWhere + ' : fichier introuvable — ' + image.src);
     });
   });
 
